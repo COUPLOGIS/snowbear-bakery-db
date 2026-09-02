@@ -395,6 +395,314 @@ function closeLightbox() {
   $('#lbImg').src = '';
 }
 
+/* ------------------------------------------------------------- 프레젠테이션 */
+
+/* 필기는 슬라이드 크기 대비 0~1 좌표로 저장한다.
+   그래야 확대하거나 창을 줄여도 그림이 제자리에 남는다. */
+const PR = {
+  on: false,
+  idx: 0,
+  zoom: 1,
+  tool: 'none',
+  color: '#e5231b',
+  strokes: new Map(),   // 상품 id -> [stroke]
+  drawing: null,
+  laserFade: null,
+};
+
+const PR_COLORS = ['#e5231b', '#1f5eff', '#111820', '#12a150', '#f5c518'];
+const PR_WIDTH = { pen: 0.0035, marker: 0.022, eraser: 0.03 };
+const PR_ZOOM = [0.5, 0.65, 0.8, 1, 1.25, 1.5, 2, 2.5, 3];
+
+function prList() {
+  return S.view.length ? S.view : S.products;
+}
+
+function openPresent() {
+  const list = prList();
+  if (!list.length) return;
+  const at = list.findIndex(p => p.id === S.selected);
+  PR.idx = at >= 0 ? at : 0;
+  PR.on = true;
+  PR.zoom = 1;
+  setTool('none');
+  $('#present').hidden = false;
+  document.documentElement.requestFullscreen?.().catch(() => { /* 전체화면 거부돼도 계속 */ });
+  renderSlide();
+  $('#prExit').focus();
+}
+
+function closePresent() {
+  PR.on = false;
+  $('#present').hidden = true;
+  $('#prLaser').hidden = true;
+  if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+  const p = prList()[PR.idx];
+  if (p) { S.selected = p.id; select(p.id); }
+}
+
+function prGo(delta) {
+  const list = prList();
+  const next = PR.idx + delta;
+  if (next < 0 || next >= list.length) return;
+  PR.idx = next;
+  renderSlide();
+}
+
+function renderSlide() {
+  const list = prList();
+  const p = list[PR.idx];
+  if (!p) return closePresent();
+
+  $('#prPage').textContent = `${PR.idx + 1} / ${list.length}`;
+  $('#prPrev').disabled = PR.idx === 0;
+  $('#prNext').disabled = PR.idx === list.length - 1;
+
+  const slide = $('#prSlide');
+  slide.textContent = '';
+  slide.append(el('h2', { textContent: val(p, 'erp_name') || '(이름 없음)' }));
+  slide.append(el('p', {
+    className: 'pr-sub',
+    textContent: [val(p, 'sale_code'), val(p, 'vendor'), val(p, 'storage')]
+      .filter(Boolean).join('  ·  ') || ' ',
+  }));
+
+  const shots = el('div', { className: 'pr-shots' });
+  for (const key of IMG_KEYS) {
+    const box = el('div', { className: 'pr-shot' });
+    box.append(el('span', { textContent: S.schema.images[key].label }));
+    const names = p[key] || [];
+    if (!names.length) {
+      box.append(el('div', { className: 'img-empty', textContent: '이미지 없음' }));
+    } else {
+      // 발표에서는 원본을 쓴다 (확대해도 뭉개지지 않도록)
+      box.append(el('img', {
+        src: fullSrc(names[0]),
+        alt: `${val(p, 'erp_name')} ${S.schema.images[key].label}`,
+      }));
+    }
+    shots.append(box);
+  }
+  slide.append(shots);
+
+  const facts = el('div', { className: 'pr-facts' });
+  const keys = ['spec', 'portion_spec', 'pack_method', 'work_type', 'bag', 'tray',
+                'label', 'individual_pack', 'label_attach', 'extra_work', 'heating', 'main_category'];
+  for (const key of keys) {
+    const v = val(p, key);
+    const row = el('div', { className: 'pr-fact' });
+    row.append(el('b', { textContent: S.schema.fields[key].label }));
+    row.append(el('span', { textContent: v || '—', className: v ? '' : 'void' }));
+    facts.append(row);
+  }
+  slide.append(facts);
+
+  applyZoom();
+  // 이미지 로딩으로 높이가 바뀌면 캔버스를 다시 맞춘다
+  for (const img of slide.querySelectorAll('img')) {
+    img.addEventListener('load', resizeInk, { once: true });
+  }
+  requestAnimationFrame(resizeInk);
+}
+
+function applyZoom() {
+  const wrap = $('#prWrap');
+  const base = Math.min(1280, wrap.clientWidth - 48);
+  $('#prStage').style.setProperty('--pr-w', Math.round(base * PR.zoom) + 'px');
+  $('#prZoomLabel').textContent = Math.round(PR.zoom * 100) + '%';
+  requestAnimationFrame(resizeInk);
+}
+
+function prZoom(dir) {
+  const i = PR_ZOOM.indexOf(PR.zoom);
+  const at = i >= 0 ? i : PR_ZOOM.indexOf(1);
+  const next = PR_ZOOM[Math.min(PR_ZOOM.length - 1, Math.max(0, at + dir))];
+  if (next === PR.zoom) return;
+  PR.zoom = next;
+  applyZoom();
+}
+
+function resizeInk() {
+  const canvas = $('#prInk');
+  const stage = $('#prStage');
+  const rect = stage.getBoundingClientRect();
+  if (!rect.width || !rect.height) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = Math.round(rect.width * dpr);
+  const h = Math.round(rect.height * dpr);
+  if (canvas.width !== w || canvas.height !== h) {
+    canvas.width = w;
+    canvas.height = h;
+  }
+  redrawInk();
+}
+
+function currentStrokes() {
+  const p = prList()[PR.idx];
+  if (!p) return [];
+  if (!PR.strokes.has(p.id)) PR.strokes.set(p.id, []);
+  return PR.strokes.get(p.id);
+}
+
+function redrawInk() {
+  const canvas = $('#prInk');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (const s of currentStrokes()) drawStroke(ctx, s, canvas);
+}
+
+function drawStroke(ctx, s, canvas) {
+  if (s.points.length < 2) return;
+  ctx.save();
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.lineWidth = Math.max(1, s.width * canvas.width);
+
+  if (s.tool === 'eraser') {
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.strokeStyle = 'rgba(0,0,0,1)';
+  } else if (s.tool === 'marker') {
+    ctx.globalCompositeOperation = 'multiply';
+    ctx.strokeStyle = s.color;
+    ctx.globalAlpha = 0.38;
+  } else {
+    ctx.strokeStyle = s.color;
+  }
+
+  ctx.beginPath();
+  ctx.moveTo(s.points[0].x * canvas.width, s.points[0].y * canvas.height);
+  for (let i = 1; i < s.points.length; i++) {
+    ctx.lineTo(s.points[i].x * canvas.width, s.points[i].y * canvas.height);
+  }
+  ctx.stroke();
+  ctx.restore();
+}
+
+function setTool(tool) {
+  PR.tool = tool;
+  const canvas = $('#prInk');
+  canvas.classList.toggle('idle', tool === 'none' || tool === 'laser');
+  canvas.classList.toggle('draw', tool === 'pen' || tool === 'marker');
+  canvas.classList.toggle('erase', tool === 'eraser');
+  for (const b of document.querySelectorAll('#prBar [data-tool]')) {
+    b.setAttribute('aria-pressed', String(b.dataset.tool === tool));
+  }
+  if (tool !== 'laser') $('#prLaser').hidden = true;
+}
+
+/* 캔버스 내부 좌표(0~1)로 환산. 확대/스크롤 상태와 무관하게 맞는다. */
+function inkPoint(e) {
+  const rect = $('#prInk').getBoundingClientRect();
+  return {
+    x: (e.clientX - rect.left) / rect.width,
+    y: (e.clientY - rect.top) / rect.height,
+  };
+}
+
+function wirePresent() {
+  const canvas = $('#prInk');
+
+  canvas.addEventListener('pointerdown', e => {
+    if (!['pen', 'marker', 'eraser'].includes(PR.tool)) return;
+    e.preventDefault();
+    canvas.setPointerCapture(e.pointerId);
+    PR.drawing = {
+      tool: PR.tool,
+      color: PR.color,
+      width: PR_WIDTH[PR.tool],
+      points: [inkPoint(e)],
+    };
+    currentStrokes().push(PR.drawing);
+  });
+
+  canvas.addEventListener('pointermove', e => {
+    if (!PR.drawing) return;
+    PR.drawing.points.push(inkPoint(e));
+    redrawInk();
+  });
+
+  const endStroke = () => {
+    if (!PR.drawing) return;
+    // 점 하나만 찍힌 경우도 보이도록 살짝 늘려 준다
+    if (PR.drawing.points.length === 1) {
+      const p = PR.drawing.points[0];
+      PR.drawing.points.push({ x: p.x + 0.001, y: p.y + 0.001 });
+    }
+    PR.drawing = null;
+    redrawInk();
+  };
+  canvas.addEventListener('pointerup', endStroke);
+  canvas.addEventListener('pointercancel', endStroke);
+  canvas.addEventListener('pointerleave', endStroke);
+
+  // 레이저 포인터
+  $('#present').addEventListener('pointermove', e => {
+    if (PR.tool !== 'laser') return;
+    const dot = $('#prLaser');
+    dot.hidden = false;
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+    clearTimeout(PR.laserFade);
+    PR.laserFade = setTimeout(() => { dot.hidden = true; }, 2500);
+  });
+
+  for (const b of document.querySelectorAll('#prBar [data-tool]')) {
+    b.addEventListener('click', () => setTool(b.dataset.tool));
+  }
+
+  const colors = $('#prColors');
+  for (const c of PR_COLORS) {
+    const sw = el('button', {
+      type: 'button', className: 'pr-swatch', title: '색상 ' + c,
+      'aria-label': '색상 ' + c,
+      'aria-pressed': String(c === PR.color),
+    });
+    sw.style.background = c;
+    sw.addEventListener('click', () => {
+      PR.color = c;
+      for (const s of colors.children) s.setAttribute('aria-pressed', String(s === sw));
+      if (!['pen', 'marker'].includes(PR.tool)) setTool('pen');
+    });
+    colors.append(sw);
+  }
+
+  $('#prPrev').addEventListener('click', () => prGo(-1));
+  $('#prNext').addEventListener('click', () => prGo(1));
+  $('#prExit').addEventListener('click', closePresent);
+  $('#prZoomIn').addEventListener('click', () => prZoom(1));
+  $('#prZoomOut').addEventListener('click', () => prZoom(-1));
+  $('#prZoomFit').addEventListener('click', () => { PR.zoom = 1; applyZoom(); });
+
+  $('#prUndo').addEventListener('click', () => { currentStrokes().pop(); redrawInk(); });
+  $('#prClear').addEventListener('click', () => {
+    const p = prList()[PR.idx];
+    if (p) PR.strokes.set(p.id, []);
+    redrawInk();
+  });
+
+  window.addEventListener('resize', () => { if (PR.on) applyZoom(); });
+
+  document.addEventListener('keydown', e => {
+    if (!PR.on) return;
+    if (e.ctrlKey && e.key.toLowerCase() === 'z') {
+      e.preventDefault();
+      currentStrokes().pop();
+      redrawInk();
+      return;
+    }
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+    const k = e.key.toLowerCase();
+    const map = { v: 'none', p: 'pen', h: 'marker', l: 'laser', e: 'eraser' };
+    if (map[k]) { setTool(map[k]); return; }
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); prGo(1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prGo(-1); }
+    else if (e.key === 'Escape') closePresent();
+    else if (e.key === '+' || e.key === '=') prZoom(1);
+    else if (e.key === '-') prZoom(-1);
+    else if (e.key === '0') { PR.zoom = 1; applyZoom(); }
+  });
+}
+
 /* ------------------------------------------------------------- GitHub */
 
 const token = () => localStorage.getItem(TOKEN_KEY) || '';
@@ -409,6 +717,9 @@ async function gh(path, opts = {}) {
   if (!t) throw new Error('GitHub 토큰이 없습니다. [저장설정]에서 먼저 등록하세요.');
   const res = await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.repo}${path}`, {
     ...opts,
+    // 캐시된 ref/commit 응답을 쓰면 낡은 SHA 를 부모로 잡아
+    // 두 번째 커밋부터 "not a fast forward" 로 실패한다.
+    cache: 'no-store',
     headers: {
       Authorization: 'Bearer ' + t,
       Accept: 'application/vnd.github+json',
@@ -423,6 +734,9 @@ async function gh(path, opts = {}) {
     if (res.status === 401) detail = '토큰이 유효하지 않습니다.';
     if (res.status === 403 && /rate limit/i.test(detail)) detail = 'API 호출 한도를 초과했습니다.';
     if (res.status === 404) detail += ' (저장소 접근 권한을 확인하세요)';
+    if (res.status === 422 && /fast forward/i.test(detail)) {
+      detail = '저장소가 그 사이 다른 곳에서 바뀌었습니다. 새로고침한 뒤 다시 저장하세요.';
+    }
     throw new Error(`GitHub ${res.status} ${detail}`.trim());
   }
   return res.status === 204 ? null : res.json();
@@ -1038,6 +1352,7 @@ function wire() {
   });
 
   $('#btnClose').addEventListener('click', closeDetail);
+  $('#btnPresent').addEventListener('click', openPresent);
   $('#btnEdit').addEventListener('click', () => openEdit(current()));
   $('#btnHide').addEventListener('click', toggleHide);
   $('#btnAdd').addEventListener('click', () => openEdit(null));
@@ -1100,10 +1415,12 @@ function wire() {
     if (e.target.id === 'lightbox') closeLightbox();
   });
   document.addEventListener('keydown', e => {
-    if (e.key !== 'Escape') return;
+    if (e.key !== 'Escape' || PR.on) return;   // 발표 중 Esc 는 발표 종료가 맡는다
     if (!$('#lightbox').hidden) { closeLightbox(); return; }
     if (!document.querySelector('dialog[open]') && S.selected) closeDetail();
   });
+
+  wirePresent();
 }
 
 boot().catch(err => {

@@ -586,3 +586,160 @@ tbody tr[aria-selected="true"] .col-name { background: var(--accent-bg); }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ---------- 프레젠테이션 ---------- */
+
+.present {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #12161c;
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-stage-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* 슬라이드와 필기 캔버스는 같은 상자를 공유해 확대해도 어긋나지 않는다 */
+.pr-stage {
+  position: relative;
+  width: var(--pr-w, 1280px);
+  flex: none;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+}
+
+.pr-ink {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  touch-action: none;
+}
+.pr-ink.draw   { cursor: crosshair; }
+.pr-ink.erase  { cursor: cell; }
+.pr-ink.idle   { pointer-events: none; }
+
+.pr-slide { padding: 34px 40px 40px; }
+
+.pr-slide h2 {
+  margin: 0 0 4px;
+  font-size: 30px;
+  letter-spacing: -.6px;
+  line-height: 1.25;
+}
+.pr-slide .pr-sub {
+  margin: 0 0 20px;
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+.pr-shots { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; }
+.pr-shot { display: flex; flex-direction: column; gap: 7px; }
+.pr-shot > span { font-size: 13px; font-weight: 700; color: var(--text-2); }
+.pr-shot img {
+  width: 330px; height: 330px;
+  object-fit: contain;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+}
+.pr-shot .img-empty { width: 330px; height: 330px; }
+
+.pr-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px 22px;
+}
+.pr-fact {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line-2);
+  padding-bottom: 6px;
+  font-size: 16px;
+}
+.pr-fact b { color: var(--text-2); font-size: 13px; font-weight: 700; flex: none; min-width: 82px; }
+.pr-fact span { overflow-wrap: anywhere; }
+.pr-fact span.void { color: var(--text-3); }
+
+/* 레이저 포인터 — 크게 */
+.pr-laser {
+  position: fixed;
+  z-index: 110;
+  width: 46px; height: 46px;
+  margin: -23px 0 0 -23px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle,
+              rgba(255, 60, 40, .95) 0%,
+              rgba(255, 60, 40, .75) 34%,
+              rgba(255, 60, 40, .28) 62%,
+              rgba(255, 60, 40, 0) 72%);
+  box-shadow: 0 0 34px 14px rgba(255, 45, 30, .45);
+}
+
+/* 도구막대 */
+.pr-bar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 9px 14px;
+  background: #1b2129;
+  border-top: 1px solid #2c343f;
+  color: #e7eaee;
+}
+
+.pr-btn {
+  height: 32px;
+  padding: 0 11px;
+  border: 1px solid #38414d;
+  border-radius: var(--radius);
+  background: #232b34;
+  color: #e7eaee;
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.pr-btn:hover { background: #2e3843; }
+.pr-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); font-weight: 700; }
+.pr-btn:disabled { opacity: .35; cursor: not-allowed; }
+.pr-exit { margin-left: auto; background: #3a2326; border-color: #5b3036; }
+.pr-exit:hover { background: #4d2c30; }
+
+.pr-nav, .pr-tools, .pr-zoom { display: flex; align-items: center; gap: 6px; }
+.pr-page { font-size: 12.5px; color: #aab3bf; font-variant-numeric: tabular-nums; min-width: 76px; text-align: center; }
+.pr-sep { width: 1px; height: 22px; background: #38414d; }
+
+.pr-colors { display: flex; gap: 5px; }
+.pr-swatch {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.pr-swatch[aria-pressed="true"] { border-color: #fff; box-shadow: 0 0 0 2px var(--accent); }
+
+.present :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+@media (max-width: 1100px) {
+  .pr-tools .pr-btn { padding: 0 8px; font-size: 0; gap: 0; }
+  .pr-tools .pr-btn::first-letter { font-size: 15px; }
+}

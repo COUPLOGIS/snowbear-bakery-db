@@ -55,6 +55,7 @@
         <p id="dSub" class="detail-sub"></p>
       </div>
       <div class="detail-actions">
+        <button type="button" id="btnPresent" class="btn">프레젠테이션</button>
         <button type="button" id="btnEdit" class="btn btn-primary">수정하기</button>
         <button type="button" id="btnHide" class="btn">숨김</button>
         <button type="button" id="btnClose" class="btn btn-ghost" aria-label="상세 닫기">닫기</button>
@@ -72,6 +73,52 @@
     <img id="lbImg" alt="">
     <figcaption id="lbCap"></figcaption>
   </figure>
+</div>
+
+<!-- 프레젠테이션 -->
+<div id="present" class="present" hidden>
+  <div class="pr-stage-wrap" id="prWrap">
+    <div class="pr-stage" id="prStage">
+      <div class="pr-slide" id="prSlide"></div>
+      <canvas id="prInk" class="pr-ink"></canvas>
+    </div>
+  </div>
+
+  <div id="prLaser" class="pr-laser" hidden></div>
+
+  <div class="pr-bar" id="prBar">
+    <div class="pr-nav">
+      <button type="button" id="prPrev" class="pr-btn" aria-label="이전 상품" title="이전 (←)">◀</button>
+      <span id="prPage" class="pr-page" aria-live="polite"></span>
+      <button type="button" id="prNext" class="pr-btn" aria-label="다음 상품" title="다음 (→)">▶</button>
+    </div>
+
+    <div class="pr-sep" role="separator"></div>
+
+    <div class="pr-tools" role="group" aria-label="필기 도구">
+      <button type="button" class="pr-btn" data-tool="none"    title="선택 안 함 (V)" aria-pressed="true">✋</button>
+      <button type="button" class="pr-btn" data-tool="pen"     title="싸인펜 (P)"      aria-pressed="false">✒️ 싸인펜</button>
+      <button type="button" class="pr-btn" data-tool="marker"  title="형광펜 (H)"      aria-pressed="false">🖍️ 형광펜</button>
+      <button type="button" class="pr-btn" data-tool="laser"   title="레이저 (L)"      aria-pressed="false">🔴 레이저</button>
+      <button type="button" class="pr-btn" data-tool="eraser"  title="지우개 (E)"      aria-pressed="false">🧽 지우개</button>
+    </div>
+
+    <div class="pr-colors" id="prColors" role="group" aria-label="색상"></div>
+
+    <button type="button" id="prUndo" class="pr-btn" title="되돌리기 (Ctrl+Z)">↶ 되돌리기</button>
+    <button type="button" id="prClear" class="pr-btn" title="이 장의 필기 모두 지우기">전체지우기</button>
+
+    <div class="pr-sep" role="separator"></div>
+
+    <div class="pr-zoom" role="group" aria-label="확대">
+      <button type="button" id="prZoomOut" class="pr-btn" title="축소 (−)">−</button>
+      <span id="prZoomLabel" class="pr-page">100%</span>
+      <button type="button" id="prZoomIn" class="pr-btn" title="확대 (+)">＋</button>
+      <button type="button" id="prZoomFit" class="pr-btn" title="화면 맞춤 (0)">맞춤</button>
+    </div>
+
+    <button type="button" id="prExit" class="pr-btn pr-exit" title="나가기 (Esc)">나가기</button>
+  </div>
 </div>
 
 <!-- 수정/추가 폼 -->

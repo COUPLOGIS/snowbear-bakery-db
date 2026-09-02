@@ -1967,7 +1967,7 @@
    "tasting": "진행",
    "heating": "해동",
    "id": "P081",
-   "active": false,
+   "active": true,
    "images_before": [
     "P081_2.(굿투)_감자빵_95g_15ea_BOX_before1.png"
    ],
