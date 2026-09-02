@@ -14,7 +14,8 @@
   <div class="topbar-meta">
     <span id="dataStamp" class="stamp"></span>
     <button type="button" id="btnAdd" class="btn btn-primary">추가하기</button>
-    <button type="button" id="btnUpload" class="btn">엑셀 업로드</button>
+    <button type="button" id="btnBulk" class="btn">엑셀 일괄수정</button>
+    <button type="button" id="btnUpload" class="btn">원본엑셀 업로드</button>
     <button type="button" id="btnToken" class="btn btn-ghost" aria-label="GitHub 저장 설정">
       <span id="tokenDot" class="dot" aria-hidden="true"></span>저장설정
     </button>
@@ -79,11 +80,18 @@
 <!-- 프레젠테이션 -->
 <div id="present" class="present" role="dialog" aria-modal="true" aria-label="프레젠테이션" hidden>
   <div class="pr-stage-wrap" id="prWrap">
-    <div class="pr-stage" id="prStage">
-      <div class="pr-slide" id="prSlide"></div>
-      <canvas id="prInk" class="pr-ink"></canvas>
+    <div class="pr-stage-box" id="prBox">
+      <div class="pr-stage" id="prStage">
+        <div class="pr-slide" id="prSlide"></div>
+        <canvas id="prInk" class="pr-ink"></canvas>
+      </div>
     </div>
   </div>
+
+  <button type="button" id="prPrevBig" class="pr-side pr-side-l"
+          aria-label="이전 상품" title="이전 상품 (←)">‹</button>
+  <button type="button" id="prNextBig" class="pr-side pr-side-r"
+          aria-label="다음 상품" title="다음 상품 (→)">›</button>
 
   <div id="prLaser" class="pr-laser" hidden></div>
 
@@ -117,6 +125,9 @@
       <button type="button" id="prZoomIn" class="pr-btn" title="확대 (+)" aria-label="확대">＋</button>
       <button type="button" id="prZoomFit" class="pr-btn" title="화면 맞춤 (0)">맞춤</button>
     </div>
+
+    <button type="button" id="prEmpty" class="pr-btn" aria-pressed="false"
+            title="값이 없는 항목 감추기 (B)">빈 항목 숨김</button>
 
     <button type="button" id="prExit" class="pr-btn pr-exit" title="나가기 (Esc)">나가기</button>
   </div>
@@ -158,6 +169,48 @@
     <span id="upMsg" class="dlg-msg" aria-live="polite"></span>
     <button type="button" class="btn" data-close>취소</button>
     <button type="button" class="btn btn-primary" id="btnUpCommit" disabled>병합 후 커밋</button>
+  </footer>
+</dialog>
+
+<!-- 엑셀 일괄수정 -->
+<dialog id="bulkDlg" class="dlg">
+  <header class="dlg-head">
+    <h2>엑셀 일괄수정</h2>
+    <button type="button" class="btn btn-ghost dlg-x" data-close aria-label="닫기">&times;</button>
+  </header>
+
+  <div class="dlg-body">
+    <ol class="steps">
+      <li>
+        <b>지금 저장된 표를 내려받습니다.</b>
+        <p>ID · 전체 항목 · 숨김 여부가 그대로 들어 있습니다.</p>
+        <div class="step-actions">
+          <button type="button" id="bulkDlView" class="btn btn-primary">조회 결과 내려받기</button>
+          <button type="button" id="bulkDlAll" class="btn">전체 내려받기</button>
+        </div>
+      </li>
+      <li>
+        <b>엑셀에서 고칩니다.</b>
+        <p>
+          <b>고칠 행만 남기고 나머지 행은 지우세요.</b> 남은 행만 반영되고, 지운 행은 손대지 않습니다.
+          <code>ID</code> 열은 바꾸지 마세요 — 어느 상품인지 찾는 열쇠입니다.
+          새 상품은 맨 아래에 <code>ID</code> 를 <b>비운 채</b> 추가하면 됩니다.
+          <code>이미지</code> 열은 참고용이라 고쳐도 반영되지 않습니다.
+        </p>
+      </li>
+      <li>
+        <b>고친 파일을 올리면 검사합니다.</b>
+        <p>무엇이 어떻게 바뀌는지 먼저 보여 드리고, 문제가 없을 때만 반영 단추가 열립니다.</p>
+        <input type="file" id="bulkFile" accept=".xlsx">
+      </li>
+    </ol>
+    <div id="bulkReport" class="up-preview" hidden></div>
+  </div>
+
+  <footer class="dlg-foot">
+    <span id="bulkMsg" class="dlg-msg" aria-live="polite"></span>
+    <button type="button" class="btn" data-close>취소</button>
+    <button type="button" class="btn btn-primary" id="bulkCommit" disabled>반영 후 커밋</button>
   </footer>
 </dialog>
 

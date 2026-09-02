@@ -187,6 +187,7 @@ function apply() {
 
 function buildGridHead() {
   const tr = el('tr');
+  tr.append(el('th', { className: 'col-no', textContent: '#', title: '조회 결과 순번' }));
   tr.append(el('th', { className: 'col-thumb', textContent: '이미지', title: '소분 전 이미지' }));
 
   // 본문(renderGrid)과 순서가 정확히 같아야 한다:
@@ -264,11 +265,12 @@ function renderGrid() {
   const groupStart = new Set(S.schema.groups.map(g => g.fields[0]));
   const rest = S.fieldOrder.filter(k => k !== 'erp_name' && k !== 'storage');
 
-  for (const p of S.view) {
+  S.view.forEach((p, i) => {
     const tr = el('tr', { tabIndex: 0, dataset: { id: p.id } });
     tr.setAttribute('aria-selected', String(S.selected === p.id));
     if (p.active === false) tr.classList.add('hidden-row');
 
+    tr.append(el('td', { className: 'col-no', textContent: String(i + 1) }));
     tr.append(thumbCell(p));
 
     const nameTd = el('td', { className: 'col-name', title: val(p, 'erp_name') });
@@ -292,7 +294,7 @@ function renderGrid() {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(p.id); }
     });
     frag.append(tr);
-  }
+  });
 
   body.replaceChildren(frag);
   $('#emptyMsg').hidden = S.view.length > 0;
@@ -335,7 +337,7 @@ function renderDetail() {
   const body = $('#detailBody');
   body.textContent = '';
 
-  // 이미지
+  // 그룹별 상세를 먼저, 이미지는 아래에 크게
   const strip = el('div', { className: 'img-strip' });
   for (const key of IMG_KEYS) {
     const box = el('div', { className: 'img-box' });
@@ -347,7 +349,7 @@ function renderDetail() {
     }
     for (const name of names) {
       const img = el('img', {
-        src: thumbSrc(name), loading: 'lazy', tabIndex: 0, width: 148, height: 148,
+        src: fullSrc(name), loading: 'lazy', tabIndex: 0,
         alt: `${val(p, 'erp_name')} ${S.schema.images[key].label} — 클릭하면 확대`,
         title: '클릭하면 확대',
       });
@@ -361,9 +363,6 @@ function renderDetail() {
     box.append(shots);
     strip.append(box);
   }
-  body.append(strip);
-
-  // 그룹별 상세
   const groups = el('div', { className: 'groups' });
   for (const g of S.schema.groups) {
     const sec = el('section', { className: 'group' });
@@ -381,17 +380,36 @@ function renderDetail() {
     groups.append(sec);
   }
   body.append(groups);
+  body.append(el('h3', { className: 'img-strip-title', textContent: '제품 이미지' }));
+  body.append(strip);
   body.scrollTop = 0;
 }
 
 /* ------------------------------------------------------------- 확대 */
 
+const LB_MAX_UPSCALE = 3;   // 원본보다 3배 넘게 늘리면 뭉개져서 오히려 안 보인다
+
 function lightbox(name, caption) {
-  $('#lbImg').src = fullSrc(name);
-  $('#lbImg').alt = caption;
+  const img = $('#lbImg');
+  img.style.maxWidth = '';
+  img.style.maxHeight = '';
+  img.addEventListener('load', fitLightbox, { once: true });
+  img.src = fullSrc(name);
+  img.alt = caption;
   $('#lbCap').textContent = caption;
   $('#lightbox').hidden = false;
   $('.lb-close').focus();
+  if (img.complete && img.naturalWidth) fitLightbox();
+}
+
+/* 화면을 최대한 채우되 원본 해상도 대비 상한을 둔다. */
+function fitLightbox() {
+  const img = $('#lbImg');
+  if (!img.naturalWidth) return;
+  img.style.maxWidth = Math.min(window.innerWidth * 0.97,
+                                img.naturalWidth * LB_MAX_UPSCALE) + 'px';
+  img.style.maxHeight = Math.min(window.innerHeight * 0.92,
+                                 img.naturalHeight * LB_MAX_UPSCALE) + 'px';
 }
 
 function closeLightbox() {
@@ -412,6 +430,8 @@ const PR = {
   strokes: new Map(),   // 상품 id -> [stroke]
   drawing: null,
   laserFade: null,
+  hideEmpty: false,
+  manualZoom: false,   // 사용자가 직접 배율을 만졌으면 자동 맞춤을 하지 않는다
 };
 
 const PR_COLORS = ['#e5231b', '#1f5eff', '#111820', '#12a150', '#f5c518'];
@@ -429,6 +449,7 @@ function openPresent() {
   PR.idx = at >= 0 ? at : 0;
   PR.on = true;
   PR.zoom = 1;
+  PR.manualZoom = false;
   setTool('none');
   $('#present').hidden = false;
   document.documentElement.requestFullscreen?.().catch(() => { /* 전체화면 거부돼도 계속 */ });
@@ -459,8 +480,10 @@ function renderSlide() {
   if (!p) return closePresent();
 
   $('#prPage').textContent = `${PR.idx + 1} / ${list.length}`;
-  $('#prPrev').disabled = PR.idx === 0;
-  $('#prNext').disabled = PR.idx === list.length - 1;
+  const atFirst = PR.idx === 0;
+  const atLast = PR.idx === list.length - 1;
+  for (const id of ['#prPrev', '#prPrevBig']) $(id).disabled = atFirst;
+  for (const id of ['#prNext', '#prNextBig']) $(id).disabled = atLast;
 
   const slide = $('#prSlide');
   slide.textContent = '';
@@ -481,59 +504,97 @@ function renderSlide() {
     } else {
       // 발표에서는 원본을 쓴다 (확대해도 뭉개지지 않도록)
       box.append(el('img', {
-        src: fullSrc(names[0]), width: 330, height: 330,
+        src: fullSrc(names[0]),
         alt: `${val(p, 'erp_name')} ${S.schema.images[key].label}`,
       }));
     }
     shots.append(box);
   }
-  slide.append(shots);
 
-  const facts = el('div', { className: 'pr-facts' });
-  const keys = ['spec', 'portion_spec', 'pack_method', 'work_type', 'bag', 'tray',
-                'label', 'individual_pack', 'label_attach', 'extra_work', 'heating', 'main_category'];
-  for (const key of keys) {
-    const v = val(p, key);
-    const row = el('div', { className: 'pr-fact' });
-    row.append(el('b', { textContent: S.schema.fields[key].label }));
-    row.append(el('span', { textContent: v || '—', className: v ? '' : 'void' }));
-    facts.append(row);
+  // 상세화면과 같은 그룹·항목을 전부 싣는다
+  const groups = el('div', { className: 'pr-groups' });
+  for (const g of S.schema.groups) {
+    const fields = g.fields.filter(k => !PR.hideEmpty || val(p, k));
+    if (!fields.length) continue;
+    const sec = el('section', { className: 'pr-group' });
+    sec.append(el('h3', { textContent: g.label }));
+    const dl = el('dl');
+    for (const key of fields) {
+      const v = val(p, key);
+      dl.append(el('dt', { textContent: S.schema.fields[key].label }));
+      dl.append(el('dd', { textContent: v || '—', className: v ? '' : 'void' }));
+    }
+    sec.append(dl);
+    groups.append(sec);
   }
-  slide.append(facts);
 
-  applyZoom();
-  // 이미지 로딩으로 높이가 바뀌면 캔버스를 다시 맞춘다
+  const body = el('div', { className: 'pr-body' });
+  body.append(shots, groups);
+  slide.append(body);
+
+  if (PR.manualZoom) applyZoom(); else prFit();
+  // 이미지가 늦게 뜨면 높이가 바뀌므로 그때 한 번 더 맞춘다
   for (const img of slide.querySelectorAll('img')) {
-    img.addEventListener('load', resizeInk, { once: true });
+    img.addEventListener('load', () => {
+      if (!PR.manualZoom) prFit(); else resizeInk();
+    }, { once: true });
   }
   requestAnimationFrame(resizeInk);
 }
 
+/* 레이아웃 폭은 고정하고 transform 으로만 키우고 줄인다.
+   폭을 줄이면 글이 접혀 오히려 길어지기 때문에 높이 맞춤이 안 된다. */
 function applyZoom() {
   const wrap = $('#prWrap');
-  const base = Math.min(1280, wrap.clientWidth - 48);
-  $('#prStage').style.setProperty('--pr-w', Math.round(base * PR.zoom) + 'px');
+  const stage = $('#prStage');
+  const base = Math.max(600, Math.min(1280, wrap.clientWidth - 48));
+
+  stage.style.setProperty('--pr-w', base + 'px');
+  stage.style.setProperty('--pr-s', PR.zoom);
+
+  // 변형된 요소는 스크롤 영역을 넓히지 못하므로 바깥 상자로 자리를 잡아 준다
+  const box = $('#prBox');
+  box.style.width = Math.round(base * PR.zoom) + 'px';
+  box.style.height = Math.round(stage.offsetHeight * PR.zoom) + 'px';
+
   $('#prZoomLabel').textContent = Math.round(PR.zoom * 100) + '%';
   requestAnimationFrame(resizeInk);
 }
 
 function prZoom(dir) {
-  const i = PR_ZOOM.indexOf(PR.zoom);
-  const at = i >= 0 ? i : PR_ZOOM.indexOf(1);
+  // 자동 맞춤 배율은 목록에 없으니 가장 가까운 단계를 기준으로 삼는다
+  let at = PR_ZOOM.findIndex(z => z >= PR.zoom - 1e-6);
+  if (at < 0) at = PR_ZOOM.length - 1;
+  if (dir > 0 && Math.abs(PR_ZOOM[at] - PR.zoom) > 1e-6) dir = 0;
   const next = PR_ZOOM[Math.min(PR_ZOOM.length - 1, Math.max(0, at + dir))];
-  if (next === PR.zoom) return;
+  if (Math.abs(next - PR.zoom) < 1e-6) return;
   PR.zoom = next;
+  PR.manualZoom = true;
+  applyZoom();
+}
+
+/* 슬라이드 전체가 한 화면에 들어오도록 배율을 맞춘다.
+   변형만 쓰므로 글이 다시 접히지 않아 한 번에 정확히 떨어진다. */
+function prFit() {
+  const wrap = $('#prWrap');
+  const avail = wrap.clientHeight - 48;
+  if (avail <= 0) return;
+  PR.manualZoom = false;
+  PR.zoom = 1;
+  applyZoom();
+  const h = $('#prStage').offsetHeight;     // 변형 전 높이
+  if (h > avail) PR.zoom = Math.max(0.3, avail / h);
   applyZoom();
 }
 
 function resizeInk() {
   const canvas = $('#prInk');
   const stage = $('#prStage');
-  const rect = stage.getBoundingClientRect();
-  if (!rect.width || !rect.height) return;
+  const cw = stage.offsetWidth, ch = stage.offsetHeight;
+  if (!cw || !ch) return;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  const w = Math.round(rect.width * dpr);
-  const h = Math.round(rect.height * dpr);
+  const w = Math.round(cw * dpr);
+  const h = Math.round(ch * dpr);
   if (canvas.width !== w || canvas.height !== h) {
     canvas.width = w;
     canvas.height = h;
@@ -672,12 +733,18 @@ function wirePresent() {
     colors.append(sw);
   }
 
-  $('#prPrev').addEventListener('click', () => prGo(-1));
-  $('#prNext').addEventListener('click', () => prGo(1));
+  for (const id of ['#prPrev', '#prPrevBig']) $(id).addEventListener('click', () => prGo(-1));
+  for (const id of ['#prNext', '#prNextBig']) $(id).addEventListener('click', () => prGo(1));
   $('#prExit').addEventListener('click', closePresent);
   $('#prZoomIn').addEventListener('click', () => prZoom(1));
   $('#prZoomOut').addEventListener('click', () => prZoom(-1));
-  $('#prZoomFit').addEventListener('click', () => { PR.zoom = 1; applyZoom(); });
+  $('#prZoomFit').addEventListener('click', prFit);
+
+  $('#prEmpty').addEventListener('click', () => {
+    PR.hideEmpty = !PR.hideEmpty;
+    $('#prEmpty').setAttribute('aria-pressed', String(PR.hideEmpty));
+    renderSlide();
+  });
 
   $('#prUndo').addEventListener('click', () => { currentStrokes().pop(); redrawInk(); });
   $('#prClear').addEventListener('click', () => {
@@ -686,7 +753,10 @@ function wirePresent() {
     redrawInk();
   });
 
-  window.addEventListener('resize', () => { if (PR.on) applyZoom(); });
+  window.addEventListener('resize', () => {
+    if (!PR.on) return;
+    if (PR.manualZoom) applyZoom(); else prFit();
+  });
 
   document.addEventListener('keydown', e => {
     if (!PR.on) return;
@@ -700,12 +770,13 @@ function wirePresent() {
     const k = e.key.toLowerCase();
     const map = { v: 'none', p: 'pen', h: 'marker', l: 'laser', e: 'eraser' };
     if (map[k]) { setTool(map[k]); return; }
+    if (k === 'b') { $('#prEmpty').click(); return; }
     if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); prGo(1); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prGo(-1); }
     else if (e.key === 'Escape') closePresent();
     else if (e.key === '+' || e.key === '=') prZoom(1);
     else if (e.key === '-') prZoom(-1);
-    else if (e.key === '0') { PR.zoom = 1; applyZoom(); }
+    else if (e.key === '0') prFit();
   });
 }
 
@@ -1333,6 +1404,321 @@ async function commitXlsx() {
   }
 }
 
+/* ------------------------------------------------------------- 엑셀 일괄수정 */
+
+/* 내려받기 → 엑셀에서 수정 → 검사 → 변경분만 반영.
+   스키마 필드 외에 ID(매칭 열쇠), 숨김, 이미지(참고용) 열이 붙는다. */
+const BULK_ID = 'ID';
+const BULK_ACTIVE = '숨김';
+const BULK_IMG = { images_before: '이미지(소분전)', images_after: '이미지(소분후)' };
+const BULK_SHEET = '상품';
+
+function bulkHeader() {
+  return [BULK_ID, ...S.fieldOrder.map(k => S.schema.fields[k].label),
+          BULK_ACTIVE, BULK_IMG.images_before, BULK_IMG.images_after];
+}
+
+function bulkExport(list, label) {
+  const rows = [bulkHeader()];
+  for (const p of list) {
+    rows.push([
+      p.id,
+      ...S.fieldOrder.map(k => (p[k] === undefined || p[k] === null) ? '' : p[k]),
+      p.active === false ? 'Y' : 'N',
+      (p.images_before || []).join(', '),
+      (p.images_after || []).join(', '),
+    ]);
+  }
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  ws['!cols'] = bulkHeader().map(h =>
+    ({ wch: h === BULK_ID ? 8 : h.startsWith('이미지') ? 34 : Math.max(11, h.length + 6) }));
+  ws['!freeze'] = { xSplit: 1, ySplit: 1 };
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, BULK_SHEET);
+
+  const d = new Date();
+  const day = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
+    .map(n => String(n).padStart(2, '0')).join('');
+  XLSX.writeFile(wb, `스노우베어_상품_일괄수정_${label}_${day}.xlsx`);
+}
+
+/** 올린 파일을 읽어 "무엇이 바뀌는지" 계획을 만든다. 여기서는 데이터를 건드리지 않는다. */
+function bulkParse(file) {
+  return file.arrayBuffer().then(buf => {
+    const wb = XLSX.read(buf, { type: 'array' });
+    const sheet = wb.Sheets[BULK_SHEET] || wb.Sheets[wb.SheetNames[0]];
+    if (!sheet) throw new Error('시트를 읽을 수 없습니다.');
+
+    const rows = XLSX.utils.sheet_to_json(sheet, {
+      header: 1, raw: true, defval: null, blankrows: false,
+    });
+    if (rows.length < 2) throw new Error('데이터 행이 없습니다. 1행은 제목 줄이어야 합니다.');
+
+    const labelToKey = {};
+    for (const [key, f] of Object.entries(S.schema.fields)) labelToKey[f.label] = key;
+
+    const colKey = {};
+    const ignored = [];
+    let hasId = false;
+    (rows[0] || []).forEach((raw, i) => {
+      const h = (raw === null || raw === undefined ? '' : String(raw)).trim();
+      if (!h) return;
+      if (h === BULK_ID) { colKey[i] = '__id'; hasId = true; }
+      else if (h === BULK_ACTIVE) colKey[i] = '__active';
+      else if (labelToKey[h]) colKey[i] = labelToKey[h];
+      else ignored.push(h);   // 이미지 열 등은 참고용
+    });
+    if (!hasId) {
+      throw new Error(`제목 줄에 '${BULK_ID}' 열이 없습니다. 내려받은 파일의 1행을 지우지 마세요.`);
+    }
+
+    const byId = new Map(S.products.map(p => [p.id, p]));
+    const plan = { updates: [], creates: [], errors: [], unchanged: 0, ignored, rowCount: 0 };
+    const seen = new Set();
+
+    for (let r = 1; r < rows.length; r++) {
+      const row = rows[r] || [];
+      const excelRow = r + 1;
+
+      const cell = {};
+      for (const [i, key] of Object.entries(colKey)) {
+        let v = row[i];
+        if (v === null || v === undefined) { cell[key] = ''; continue; }
+        if (typeof v === 'string') v = v.replace(/\r\n/g, '\n').trim();
+        cell[key] = v;
+      }
+
+      const id = String(cell.__id ?? '').trim();
+      const isBlank = Object.entries(cell)
+        .every(([k, v]) => k === '__active' || v === '' || v === null);
+      if (isBlank) continue;
+      plan.rowCount++;
+
+      const name = String(cell.erp_name ?? '').trim();
+
+      if (!id) {
+        if (!name) {
+          plan.errors.push(`${excelRow}행: ID 도 ERP상품명도 비어 있습니다.`);
+          continue;
+        }
+        plan.creates.push({ excelRow, cell, name });
+        continue;
+      }
+
+      if (seen.has(id)) {
+        plan.errors.push(`${excelRow}행: ID ${id} 가 앞 행과 중복입니다.`);
+        continue;
+      }
+      seen.add(id);
+
+      const target = byId.get(id);
+      if (!target) {
+        plan.errors.push(`${excelRow}행: ID ${id} 를 찾을 수 없습니다. ID 열을 고치지 마세요.`);
+        continue;
+      }
+      if (!name) {
+        plan.errors.push(`${excelRow}행 (${val(target, 'erp_name')}): ERP상품명은 비울 수 없습니다.`);
+        continue;
+      }
+
+      const changes = [];
+      for (const key of S.fieldOrder) {
+        if (!(key in cell)) continue;          // 엑셀에서 열을 지웠으면 건드리지 않는다
+        const to = cell[key];
+        const before = val(target, key);
+        const after = to === '' ? '' : String(to);
+        if (before !== after) changes.push({ key, before, after, value: to });
+      }
+
+      let activeTo = null;
+      if ('__active' in cell) {
+        const hide = String(cell.__active ?? '').trim().toUpperCase();
+        if (hide && !['Y', 'N', 'YES', 'NO'].includes(hide)) {
+          plan.errors.push(`${excelRow}행: ${BULK_ACTIVE} 은 Y 또는 N 이어야 합니다 (입력값 "${cell.__active}")`);
+          continue;
+        }
+        const wantActive = !(hide === 'Y' || hide === 'YES');
+        if (wantActive !== (target.active !== false)) activeTo = wantActive;
+      }
+
+      if (!changes.length && activeTo === null) { plan.unchanged++; continue; }
+      plan.updates.push({ excelRow, target, changes, activeTo });
+    }
+
+    return plan;
+  });
+}
+
+function bulkRender(plan) {
+  const box = $('#bulkReport');
+  box.textContent = '';
+  box.hidden = false;
+
+  const line = (...kids) => box.append(el('div', {}, ...kids));
+  const num = n => el('b', { textContent: String(n) });
+
+  line(`읽은 행 `, num(plan.rowCount), `건 → `,
+       num(plan.updates.length), `건 수정, `,
+       num(plan.creates.length), `건 추가, `,
+       num(plan.unchanged), `건 변경 없음`);
+
+  if (plan.errors.length) {
+    const sec = el('div', { className: 'bulk-errors' });
+    sec.append(el('div', {}, el('b', { textContent: `문제 ${plan.errors.length}건 — 고친 뒤 다시 올려 주세요` })));
+    const ul = el('ul');
+    for (const e of plan.errors.slice(0, 20)) ul.append(el('li', { textContent: e }));
+    if (plan.errors.length > 20) ul.append(el('li', { textContent: `… 외 ${plan.errors.length - 20}건` }));
+    sec.append(ul);
+    box.append(sec);
+  }
+
+  if (plan.updates.length) {
+    const ul = el('ul', { className: 'bulk-diff' });
+    for (const u of plan.updates.slice(0, 40)) {
+      const li = el('li');
+      li.append(el('b', { textContent: val(u.target, 'erp_name') || u.target.id }));
+      const parts = u.changes.map(c =>
+        `${S.schema.fields[c.key].label}: ${c.before || '(빈칸)'} → ${c.after || '(빈칸)'}`);
+      if (u.activeTo !== null) parts.push(u.activeTo ? '숨김 해제' : '숨김');
+      li.append(el('div', { className: 'bulk-change', textContent: parts.join('  ·  ') }));
+      ul.append(li);
+    }
+    if (plan.updates.length > 40) {
+      ul.append(el('li', { textContent: `… 외 ${plan.updates.length - 40}건` }));
+    }
+    box.append(ul);
+  }
+
+  if (plan.creates.length) {
+    const ul = el('ul');
+    for (const c of plan.creates.slice(0, 20)) ul.append(el('li', { textContent: '신규: ' + c.name }));
+    if (plan.creates.length > 20) ul.append(el('li', { textContent: `… 외 ${plan.creates.length - 20}건` }));
+    box.append(ul);
+  }
+
+  if (plan.ignored.length) {
+    line(el('b', { textContent: '반영하지 않는 열: ' }), plan.ignored.join(', '));
+  }
+
+  const ok = !plan.errors.length && (plan.updates.length || plan.creates.length);
+  $('#bulkCommit').disabled = !ok;
+  return ok;
+}
+
+async function bulkApply() {
+  const plan = S.pendingBulk;
+  if (!plan) return;
+  const btn = $('#bulkCommit');
+  const msg = $('#bulkMsg');
+  btn.disabled = true;
+  msg.classList.remove('err');
+
+  const snapshot = S.products.map(p => ({ ...p }));
+
+  try {
+    const now = stamp();
+
+    for (const u of plan.updates) {
+      for (const c of u.changes) {
+        if (c.after === '') delete u.target[c.key];
+        else u.target[c.key] = c.value;
+      }
+      if (u.activeTo !== null) u.target.active = u.activeTo;
+      u.target.updated_at = now;
+    }
+
+    for (const c of plan.creates) {
+      const rec = { id: nextId(S.products), active: true };
+      for (const key of S.fieldOrder) {
+        const v = c.cell[key];
+        if (v !== undefined && v !== '') rec[key] = v;
+      }
+      rec.images_before = [];
+      rec.images_after = [];
+      rec.updated_at = now;
+      S.products.push(rec);
+    }
+
+    const parts = [];
+    if (plan.updates.length) parts.push(`${plan.updates.length}건 수정`);
+    if (plan.creates.length) parts.push(`${plan.creates.length}건 추가`);
+
+    const res = await commitFiles(
+      [{ path: 'data/products.json', text: productsPayload() }],
+      `엑셀 일괄수정 (${parts.join(', ')})`,
+      t => { msg.textContent = t; }
+    );
+    toast(res.skipped ? '변경된 내용이 없습니다.' : `반영 완료 — ${parts.join(', ')}`);
+
+    $('#bulkDlg').close();
+    bulkReset();
+    buildFilterControls();
+    apply();
+    if (S.selected) renderDetail();
+
+  } catch (err) {
+    S.products = snapshot;
+    apply();
+    msg.textContent = err.message;
+    msg.classList.add('err');
+    btn.disabled = false;
+  }
+}
+
+function bulkReset() {
+  S.pendingBulk = null;
+  $('#bulkFile').value = '';
+  $('#bulkReport').hidden = true;
+  $('#bulkReport').textContent = '';
+  $('#bulkMsg').textContent = '';
+  $('#bulkMsg').classList.remove('err');
+  $('#bulkCommit').disabled = true;
+}
+
+function wireBulk() {
+  $('#btnBulk').addEventListener('click', () => {
+    bulkReset();
+    $('#bulkDlView').textContent = `조회 결과 내려받기 (${S.view.length}건)`;
+    $('#bulkDlAll').textContent = `전체 내려받기 (${S.products.length}건)`;
+    $('#bulkDlAll').hidden = S.view.length === S.products.length;
+    $('#bulkDlg').showModal();
+  });
+
+  $('#bulkDlView').addEventListener('click', () => {
+    bulkExport(S.view, '조회분');
+    toast(`${S.view.length}건을 내려받았습니다.`);
+  });
+  $('#bulkDlAll').addEventListener('click', () => {
+    bulkExport(S.products, '전체');
+    toast(`${S.products.length}건을 내려받았습니다.`);
+  });
+
+  $('#bulkFile').addEventListener('change', async e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const msg = $('#bulkMsg');
+    msg.classList.remove('err');
+    msg.textContent = '검사 중…';
+    $('#bulkCommit').disabled = true;
+    try {
+      S.pendingBulk = await bulkParse(file);
+      const ok = bulkRender(S.pendingBulk);
+      msg.textContent = ok ? '검사 통과 — 반영할 수 있습니다.'
+        : (S.pendingBulk.errors.length ? '문제를 고친 뒤 다시 올려 주세요.' : '반영할 변경이 없습니다.');
+      if (!ok && S.pendingBulk.errors.length) msg.classList.add('err');
+    } catch (err) {
+      S.pendingBulk = null;
+      $('#bulkReport').hidden = true;
+      msg.textContent = err.message;
+      msg.classList.add('err');
+    }
+  });
+
+  $('#bulkCommit').addEventListener('click', bulkApply);
+}
+
 /* ------------------------------------------------------------- 이벤트 */
 
 function wire() {
@@ -1420,6 +1806,7 @@ function wire() {
   $('#lightbox').addEventListener('click', e => {
     if (e.target.id === 'lightbox') closeLightbox();
   });
+  window.addEventListener('resize', () => { if (!$('#lightbox').hidden) fitLightbox(); });
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape' || PR.on) return;   // 발표 중 Esc 는 발표 종료가 맡는다
     if (!$('#lightbox').hidden) { closeLightbox(); return; }
@@ -1427,6 +1814,7 @@ function wire() {
   });
 
   wirePresent();
+  wireBulk();
 }
 
 boot().catch(err => {

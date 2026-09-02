@@ -608,10 +608,15 @@ tbody tr[aria-selected="true"] .col-name { background: var(--accent-bg); }
 }
 
 /* 슬라이드와 필기 캔버스는 같은 상자를 공유해 확대해도 어긋나지 않는다 */
+.pr-stage-box { position: relative; flex: none; }
+
 .pr-stage {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: var(--pr-w, 1280px);
-  flex: none;
+  transform: scale(var(--pr-s, 1));
+  transform-origin: top left;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
@@ -765,3 +770,183 @@ tbody tr { content-visibility: auto; contain-intrinsic-size: auto 40px; }
 
 /* 그리는 동안 텍스트가 선택되지 않게 */
 .present.inking, .present.inking * { user-select: none; }
+
+/* 발표 슬라이드 본문 — 이미지 + 전 항목 그룹 */
+.pr-body {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+.pr-shots { flex-direction: column; margin-bottom: 0; }
+
+.pr-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+.pr-group { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.pr-group > h3 {
+  margin: 0;
+  padding: 7px 12px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-2);
+  letter-spacing: .3px;
+}
+.pr-group dl { margin: 0; display: grid; grid-template-columns: 116px minmax(0, 1fr); }
+.pr-group dt, .pr-group dd {
+  margin: 0;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--line-2);
+  font-size: 14.5px;
+  min-width: 0;
+}
+.pr-group dt { color: var(--text-2); background: #fcfcfd; font-size: 12.5px; font-weight: 600; }
+.pr-group dd { white-space: pre-wrap; overflow-wrap: anywhere; }
+.pr-group dd.void { color: var(--text-3); }
+.pr-group dl > :nth-last-child(-n+2) { border-bottom: 0; }
+
+@media (max-width: 1000px) {
+  .pr-body { grid-template-columns: minmax(0, 1fr); }
+  .pr-shots { flex-direction: row; }
+}
+
+/* ---------- 상세 이미지: 아래쪽에 원본 비율 그대로 크게 ---------- */
+
+.img-strip-title {
+  margin: 22px 0 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-2);
+  letter-spacing: .3px;
+}
+
+.img-strip { gap: 20px; margin-bottom: 0; align-items: flex-start; }
+
+/* 높이만 고정하고 너비는 사진 비율을 따라간다 */
+.img-box img,
+.img-box .img-empty {
+  width: auto;
+  height: clamp(240px, 36vh, 460px);
+  max-width: 100%;
+}
+.img-box img { object-fit: contain; padding: 6px; }
+.img-box .img-empty { width: 240px; }
+
+/* 발표 슬라이드 이미지도 같은 규칙 */
+.pr-shot img,
+.pr-shot .img-empty {
+  width: auto;
+  height: 270px;
+  max-width: 380px;
+}
+.pr-shot img { object-fit: contain; }
+.pr-shot .img-empty { width: 270px; }
+
+/* ---------- 순번 컬럼 ---------- */
+
+.col-no {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  width: 46px;
+  min-width: 46px;
+  background: var(--surface);
+  color: var(--text-3);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+}
+thead .col-no { z-index: 4; background: var(--surface-2); text-align: right; }
+
+/* 순번이 앞에 붙었으므로 고정 컬럼 위치를 밀어 준다 */
+.col-thumb { left: 46px; }
+.col-name  { left: 98px; }
+
+tbody tr:hover .col-no { background: var(--surface-2); }
+tbody tr[aria-selected="true"] .col-no { background: var(--accent-bg); }
+
+/* 상세 열림(좁은 리스트)에서도 번호는 보이게 */
+.layout.split .pane-list tbody td.col-no {
+  display: table-cell;
+  position: static;
+  padding: 7px 4px 7px 8px;
+  width: 30px;
+  min-width: 30px;
+}
+
+/* ---------- 확대는 화면 가득 ---------- */
+
+.lightbox { padding: 0; }
+.lightbox img {
+  height: 92vh;          /* 작은 원본도 키운다. 상한은 app.js 가 잡는다 */
+  width: auto;
+  padding: 0;
+  border-radius: 4px;
+}
+.lightbox figcaption {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, .55);
+  max-width: 90vw;
+}
+
+/* ---------- 일괄수정 안내 ---------- */
+
+.steps { margin: 0; padding-left: 22px; display: grid; gap: 16px; }
+.steps li { padding-left: 4px; }
+.steps li > b { font-size: 13.5px; }
+.steps p { margin: 5px 0 8px; color: var(--text-2); font-size: 12.5px; line-height: 1.7; }
+.step-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.bulk-errors {
+  margin-top: 10px;
+  padding: 9px 11px;
+  border-radius: var(--radius);
+  background: #fdecea;
+  border: 1px solid #f3c4bd;
+  color: #8a2417;
+}
+.bulk-errors ul { margin: 5px 0 0; padding-left: 18px; }
+
+.bulk-diff { margin: 10px 0 0; padding-left: 18px; }
+.bulk-diff li { margin-bottom: 7px; }
+.bulk-change { color: var(--text-2); font-size: 12px; overflow-wrap: anywhere; }
+
+/* 발표 화면 양옆의 큼직한 이동 버튼 */
+.pr-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 105;
+  width: 64px;
+  height: 116px;
+  border: 1px solid #38414d;
+  border-radius: 12px;
+  background: rgba(28, 34, 42, .74);
+  color: #e7eaee;
+  font-size: 44px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.pr-side:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); }
+.pr-side:disabled { opacity: .22; cursor: not-allowed; }
+.pr-side-l { left: 14px; }
+.pr-side-r { right: 14px; }
+
+@media (max-width: 900px) {
+  .pr-side { width: 46px; height: 84px; font-size: 32px; }
+}
