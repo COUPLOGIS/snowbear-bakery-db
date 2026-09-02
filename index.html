@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f5f7">
 <title>스노우베어베이커리 상품 DB</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -27,7 +28,7 @@
     <div class="filter-row">
       <label class="f-search">
         <span class="sr-only">검색</span>
-        <input type="search" id="q" placeholder="상품명 · 코드 · 규격 검색" autocomplete="off">
+        <input type="search" id="q" placeholder="예: 크루아상, 171DP354, 95g…" autocomplete="off" spellcheck="false">
       </label>
       <div id="selects" class="f-selects"></div>
       <label class="f-check">
@@ -67,7 +68,7 @@
 </main>
 
 <!-- 이미지 확대 -->
-<div id="lightbox" class="lightbox" hidden>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 확대" hidden>
   <button type="button" class="lb-close" aria-label="닫기">&times;</button>
   <figure>
     <img id="lbImg" alt="">
@@ -76,7 +77,7 @@
 </div>
 
 <!-- 프레젠테이션 -->
-<div id="present" class="present" hidden>
+<div id="present" class="present" role="dialog" aria-modal="true" aria-label="프레젠테이션" hidden>
   <div class="pr-stage-wrap" id="prWrap">
     <div class="pr-stage" id="prStage">
       <div class="pr-slide" id="prSlide"></div>
@@ -96,7 +97,7 @@
     <div class="pr-sep" role="separator"></div>
 
     <div class="pr-tools" role="group" aria-label="필기 도구">
-      <button type="button" class="pr-btn" data-tool="none"    title="선택 안 함 (V)" aria-pressed="true">✋</button>
+      <button type="button" class="pr-btn" data-tool="none"    title="선택 안 함 (V)" aria-pressed="true" aria-label="필기 도구 해제">✋</button>
       <button type="button" class="pr-btn" data-tool="pen"     title="싸인펜 (P)"      aria-pressed="false">✒️ 싸인펜</button>
       <button type="button" class="pr-btn" data-tool="marker"  title="형광펜 (H)"      aria-pressed="false">🖍️ 형광펜</button>
       <button type="button" class="pr-btn" data-tool="laser"   title="레이저 (L)"      aria-pressed="false">🔴 레이저</button>
@@ -111,9 +112,9 @@
     <div class="pr-sep" role="separator"></div>
 
     <div class="pr-zoom" role="group" aria-label="확대">
-      <button type="button" id="prZoomOut" class="pr-btn" title="축소 (−)">−</button>
+      <button type="button" id="prZoomOut" class="pr-btn" title="축소 (−)" aria-label="축소">−</button>
       <span id="prZoomLabel" class="pr-page">100%</span>
-      <button type="button" id="prZoomIn" class="pr-btn" title="확대 (+)">＋</button>
+      <button type="button" id="prZoomIn" class="pr-btn" title="확대 (+)" aria-label="확대">＋</button>
       <button type="button" id="prZoomFit" class="pr-btn" title="화면 맞춤 (0)">맞춤</button>
     </div>
 
@@ -175,7 +176,8 @@
     </p>
     <label class="fld">
       <span>GitHub 토큰</span>
-      <input type="password" id="tokenInput" placeholder="github_pat_... 또는 ghp_..." autocomplete="off">
+      <input type="password" id="tokenInput" placeholder="github_pat_… 또는 ghp_…"
+             autocomplete="off" spellcheck="false" translate="no">
     </label>
     <p class="hint">
       발급: GitHub → Settings → Developer settings → Personal access tokens →

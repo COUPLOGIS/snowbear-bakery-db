@@ -109,7 +109,11 @@ async function boot() {
   S.filterKeys = S.fieldOrder.filter(k => schema.fields[k] && schema.fields[k].filter);
   for (const k of S.filterKeys) S.filters[k] = '';
 
-  $('#dataStamp').textContent = '갱신 ' + (S.meta.updated_at || '').slice(0, 16).replace('T', ' ');
+  $('#dataStamp').textContent = S.meta.updated_at
+    ? '갱신 ' + new Intl.DateTimeFormat('ko-KR', {
+        dateStyle: 'short', timeStyle: 'short', timeZone: 'Asia/Seoul',
+      }).format(new Date(S.meta.updated_at))
+    : '';
 
   buildFilterControls();
   buildGridHead();
@@ -230,7 +234,7 @@ function thumbCell(p) {
   const name = (p.images_before && p.images_before[0]) || (p.images_after && p.images_after[0]);
   if (name) {
     td.append(el('img', {
-      className: 'thumb', loading: 'lazy', src: thumbSrc(name),
+      className: 'thumb', loading: 'lazy', width: 34, height: 34, src: thumbSrc(name),
       alt: val(p, 'erp_name') + ' 썸네일',
     }));
   } else {
@@ -343,7 +347,7 @@ function renderDetail() {
     }
     for (const name of names) {
       const img = el('img', {
-        src: thumbSrc(name), loading: 'lazy', tabIndex: 0,
+        src: thumbSrc(name), loading: 'lazy', tabIndex: 0, width: 148, height: 148,
         alt: `${val(p, 'erp_name')} ${S.schema.images[key].label} — 클릭하면 확대`,
         title: '클릭하면 확대',
       });
@@ -477,7 +481,7 @@ function renderSlide() {
     } else {
       // 발표에서는 원본을 쓴다 (확대해도 뭉개지지 않도록)
       box.append(el('img', {
-        src: fullSrc(names[0]),
+        src: fullSrc(names[0]), width: 330, height: 330,
         alt: `${val(p, 'erp_name')} ${S.schema.images[key].label}`,
       }));
     }
@@ -613,6 +617,7 @@ function wirePresent() {
       points: [inkPoint(e)],
     };
     currentStrokes().push(PR.drawing);
+    $('#present').classList.add('inking');
   });
 
   canvas.addEventListener('pointermove', e => {
@@ -629,6 +634,7 @@ function wirePresent() {
       PR.drawing.points.push({ x: p.x + 0.001, y: p.y + 0.001 });
     }
     PR.drawing = null;
+    $('#present').classList.remove('inking');
     redrawInk();
   };
   canvas.addEventListener('pointerup', endStroke);

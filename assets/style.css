@@ -743,3 +743,25 @@ tbody tr[aria-selected="true"] .col-name { background: var(--accent-bg); }
   .pr-tools .pr-btn { padding: 0 8px; font-size: 0; gap: 0; }
   .pr-tools .pr-btn::first-letter { font-size: 15px; }
 }
+
+/* ---------- 마무리: 터치 · 성능 · 타이포 ---------- */
+
+button, [role="button"], input, select, textarea, tbody tr {
+  touch-action: manipulation;                 /* 더블탭 확대 지연 제거 */
+  -webkit-tap-highlight-color: rgba(31, 94, 255, .18);
+}
+
+/* 115행을 한 번에 그리므로 화면 밖 행은 레이아웃 계산을 미룬다 */
+tbody tr { content-visibility: auto; contain-intrinsic-size: auto 40px; }
+
+/* 모달 안에서 스크롤이 뒤 화면으로 번지지 않게 */
+.dlg, .dlg-body, .detail-body, .table-scroll, .pr-stage-wrap { overscroll-behavior: contain; }
+
+/* 제목 줄바꿈이 한 글자만 남지 않도록 */
+.topbar h1, .detail-head h2, .dlg-head h2, .pr-slide h2 { text-wrap: balance; }
+
+/* 노치 있는 기기에서 도구막대가 가려지지 않게 */
+.pr-bar { padding-bottom: max(9px, env(safe-area-inset-bottom)); }
+
+/* 그리는 동안 텍스트가 선택되지 않게 */
+.present.inking, .present.inking * { user-select: none; }
