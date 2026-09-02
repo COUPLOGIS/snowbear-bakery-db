@@ -348,8 +348,9 @@ function renderDetail() {
       shots.append(el('div', { className: 'img-empty', textContent: '이미지 없음' }));
     }
     for (const name of names) {
+      // 이 화면의 주인공이라 미루지 않고 바로 받는다
       const img = el('img', {
-        src: fullSrc(name), loading: 'lazy', tabIndex: 0,
+        src: fullSrc(name), fetchPriority: 'high', tabIndex: 0,
         alt: `${val(p, 'erp_name')} ${S.schema.images[key].label} — 클릭하면 확대`,
         title: '클릭하면 확대',
       });
