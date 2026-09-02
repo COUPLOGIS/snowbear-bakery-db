@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-02T15:52:10+09:00",
+ "updated_at": "2026-09-02T15:58:52+09:00",
  "source": "스노우베어베이커리 상품정보.xlsx",
  "count": 115,
  "products": [
@@ -1967,14 +1967,14 @@
    "tasting": "진행",
    "heating": "해동",
    "id": "P081",
-   "active": true,
+   "active": false,
    "images_before": [
     "P081_2.(굿투)_감자빵_95g_15ea_BOX_before1.png"
    ],
    "images_after": [
     "P081_2.(굿투)_감자빵_95g_15ea_BOX_after1.png"
    ],
-   "updated_at": "2026-09-02T15:52:10+09:00"
+   "updated_at": "2026-09-02T15:58:52+09:00"
   },
   {
    "prep_owner": "코업",
