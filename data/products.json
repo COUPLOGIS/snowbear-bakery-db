@@ -1,0 +1,2752 @@
+{
+ "updated_at": "2026-09-02T15:35:48+09:00",
+ "source": "스노우베어베이커리 상품정보.xlsx",
+ "count": 115,
+ "products": [
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP354",
+   "erp_name": "벨지움초콜렛타르트",
+   "sb_code": "192SB001",
+   "sb_name": "벨지움 초코렛 타르트 80mm",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "⌀80",
+   "spec": "box(12ea*3tray)",
+   "portion_spec": "71g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "A 120*150",
+   "tray": "트레이 A 72*72*20",
+   "extra_work": "열전사",
+   "id": "P001",
+   "active": true,
+   "images_before": [
+    "P001_벨지움초콜렛타르트_before1.png"
+   ],
+   "images_after": [
+    "P001_벨지움초콜렛타르트_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU013",
+   "erp_name": "뉴욕롤",
+   "sb_code": "192SB002",
+   "sb_name": "NY 롤 플랜(뉴욕롤)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "⌀95*H30",
+   "spec": "12ea*3pack/box",
+   "portion_spec": "62g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "extra_work": "열전사",
+   "id": "P002",
+   "active": true,
+   "images_before": [
+    "P002_뉴욕롤_before1.png"
+   ],
+   "images_after": [
+    "P002_뉴욕롤_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "sale_code": "171DP367",
+   "erp_name": "크루아상64",
+   "sb_code": "192SB007",
+   "sb_name": "크루아상64",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "64g*8ea/box",
+   "portion_spec": "64g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "B 85*85",
+   "extra_work": "라벨부착",
+   "id": "P003",
+   "active": true,
+   "images_before": [
+    "P003_크루아상64_before1.png"
+   ],
+   "images_after": [
+    "P003_크루아상64_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP364",
+   "erp_name": "브리오쉬 단팥빵",
+   "sb_code": "192SB008",
+   "sb_name": "SIB 브리오쉬 단팥빵",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "65g x 20개입",
+   "portion_spec": "65g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "B 85*85",
+   "extra_work": "라벨부착",
+   "id": "P004",
+   "active": true,
+   "images_before": [
+    "P004_브리오쉬_단팥빵_before1.png"
+   ],
+   "images_after": [
+    "P004_브리오쉬_단팥빵_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP277",
+   "erp_name": "파 베이크 바게트(미닛바게트)",
+   "sb_code": "192SB009",
+   "sb_name": "파 베이크 바게트",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "180*60",
+   "spec": "58g*12ea/box",
+   "portion_spec": "58g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "B 85*85",
+   "extra_work": "라벨부착",
+   "id": "P005",
+   "active": true,
+   "images_before": [
+    "P005_파_베이크_바게트(미닛바게트)_before1.png"
+   ],
+   "images_after": [
+    "P005_파_베이크_바게트(미닛바게트)_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "211DP806",
+   "erp_name": "반미바게트",
+   "sb_code": "192SB010",
+   "sb_name": "바게트반미",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "55g*10ea/box",
+   "portion_spec": "55g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "B 85*85",
+   "extra_work": "라벨부착",
+   "id": "P006",
+   "active": true,
+   "images_before": [
+    "P006_반미바게트_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "호기롤",
+   "vendor": "선인",
+   "storage": "냉동",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "B 85*85",
+   "extra_work": "라벨부착",
+   "id": "P007",
+   "active": true,
+   "images_after": [
+    "P007_호기롤_after1.png"
+   ],
+   "images_before": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "포카치아",
+   "sb_code": "192SB011",
+   "sb_name": "포카치아",
+   "vendor": "(P)구스F&B(주)",
+   "storage": "냉동",
+   "product_size": "250*350*3",
+   "spec": "570g*6ea/box",
+   "portion_spec": "660g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "label": "B 85*85",
+   "id": "P008",
+   "active": true,
+   "images_before": [
+    "P008_포카치아_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "192DP001",
+   "erp_name": "브리오쉬 베이글",
+   "sb_code": "192SB012",
+   "sb_name": "베이글 브리오쉬",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀110",
+   "spec": "70g*15ea/box",
+   "portion_spec": "70g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "B 150*180",
+   "extra_work": "열전사",
+   "id": "P009",
+   "active": true,
+   "images_before": [
+    "P009_브리오쉬_베이글_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "192DP003",
+   "erp_name": "바게트 베이글",
+   "sb_code": "192SB013",
+   "sb_name": "베이글 시리얼",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀114",
+   "spec": "55g*15ea/box",
+   "portion_spec": "75g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "B 150*180",
+   "extra_work": "열전사",
+   "id": "P010",
+   "active": true,
+   "images_before": [
+    "P010_바게트_베이글_before1.png"
+   ],
+   "images_after": [
+    "P010_바게트_베이글_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "192DP002",
+   "erp_name": "멀티그레인 베이글",
+   "sb_code": "192SB014",
+   "sb_name": "베이글 크리스탈리노",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀110",
+   "spec": "75g*15ea/box",
+   "portion_spec": "55g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "B 150*180",
+   "extra_work": "열전사",
+   "id": "P011",
+   "active": true,
+   "images_before": [
+    "P011_멀티그레인_베이글_before1.png"
+   ],
+   "images_after": [
+    "P011_멀티그레인_베이글_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "211DP805",
+   "erp_name": "브리오슈식빵",
+   "sb_code": "192SB015",
+   "sb_name": "브리오슈식빵",
+   "vendor": "케익모아",
+   "storage": "냉동",
+   "spec": "380g*5ea/box",
+   "portion_spec": "400g",
+   "pack_qty": 1,
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P012",
+   "active": true,
+   "images_before": [
+    "P012_브리오슈식빵_before1.png"
+   ],
+   "images_after": [
+    "P012_브리오슈식빵_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP041",
+   "erp_name": "감자스프",
+   "sb_code": "192SB016",
+   "sb_name": "감자스프(180g)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "2kg(10ea)/box",
+   "portion_spec": "180g",
+   "pack_qty": 1,
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "pack_method": "전용케이스",
+   "id": "P013",
+   "active": true,
+   "images_before": [
+    "P013_감자스프_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP048",
+   "erp_name": "옥수수스프",
+   "sb_code": "192SB017",
+   "sb_name": "옥수수스프(200g)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "2kg(11ea)/box",
+   "portion_spec": "200g",
+   "pack_qty": 1,
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "pack_method": "전용케이스",
+   "id": "P014",
+   "active": true,
+   "images_before": [
+    "P014_옥수수스프_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP059",
+   "erp_name": "양송이스프",
+   "sb_code": "192SB018",
+   "sb_name": "양송이스프(180g)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "2kg(12ea)/box",
+   "portion_spec": "180g",
+   "pack_qty": 1,
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "pack_method": "전용케이스",
+   "id": "P015",
+   "active": true,
+   "images_before": [
+    "P015_양송이스프_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP051",
+   "erp_name": "캬라멜 데이트푸딩",
+   "sb_code": "커팅?",
+   "sb_name": "커팅?",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "240*240*30\n16등분 60*60*30",
+   "spec": "1.2kg (24*24*3)",
+   "portion_spec": "커팅?",
+   "pack_qty": "커팅?",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "A 120*150",
+   "tray": "트레이 A 72*72*20",
+   "extra_work": "컷팅필요\n열전사",
+   "id": "P016",
+   "active": true,
+   "images_before": [
+    "P016_캬라멜_데이트푸딩_before1.png"
+   ],
+   "images_after": [
+    "P016_캬라멜_데이트푸딩_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP343",
+   "erp_name": "퐁당쇼콜라 전자레인지",
+   "sb_code": "192SB020",
+   "sb_name": "전자렌지용 초코 퐁당쇼콜라",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "⌀70",
+   "spec": "(75g*15ea)*3tray/box",
+   "portion_spec": "75g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "A 120*150",
+   "extra_work": "열전사",
+   "id": "P017",
+   "active": true,
+   "images_before": [
+    "P017_퐁당쇼콜라_전자레인지_before1.png"
+   ],
+   "images_after": [
+    "P017_퐁당쇼콜라_전자레인지_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP362",
+   "erp_name": "티라미수베린",
+   "sb_code": "192SB021",
+   "sb_name": "티라미수",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "0.95kg(10ea)*2tray/box",
+   "portion_spec": "95g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "C 52*132",
+   "extra_work": "뚜껑 덮어 랩핑 후 스티커",
+   "id": "P018",
+   "active": true,
+   "images_before": [
+    "P018_티라미수베린_before1.png"
+   ],
+   "images_after": [
+    "P018_티라미수베린_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP353",
+   "erp_name": "딸기티라미수베린",
+   "sb_code": "192SB022",
+   "sb_name": "딸기 티라미수",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "0.96kg(10ea)*2tray/box",
+   "portion_spec": "96g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "C 52*132",
+   "extra_work": "뚜껑 덮어 랩핑 후 스티커",
+   "id": "P019",
+   "active": true,
+   "images_before": [
+    "P019_딸기티라미수베린_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP361",
+   "erp_name": "파바나베린",
+   "sb_code": "192SB023",
+   "sb_name": "파바나무스 베린",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "(94g*10ea)*2tray/box",
+   "portion_spec": "94g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "C 52*132",
+   "extra_work": "뚜껑 덮어 랩핑 후 스티커",
+   "id": "P020",
+   "active": true,
+   "images_before": [
+    "P020_파바나베린_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "171DP349",
+   "erp_name": "군고구마레이어베린",
+   "sb_name": "군고구마레이어베린",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "82g*10ea",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "C 52*132",
+   "extra_work": "뚜껑 덮어 랩핑 후 스티커",
+   "id": "P021",
+   "active": true,
+   "images_before": [
+    "P021_군고구마레이어베린_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "요구르트레몬케이크",
+   "sb_code": "192SB024",
+   "sb_name": "요거트케익",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "185*80",
+   "spec": "700g*4ea/box",
+   "portion_spec": "700g",
+   "pack_qty": 1,
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "B 85*85",
+   "extra_work": "라벨 부착",
+   "id": "P022",
+   "active": true,
+   "images_before": [
+    "P022_요구르트레몬케이크_before1.png"
+   ],
+   "images_after": [
+    "P022_요구르트레몬케이크_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "사츠마이모 와산본 몽블랑",
+   "sb_name": "사츠마이모 와산본 몽블랑",
+   "vendor": "MO",
+   "storage": "냉동",
+   "product_size": "60*60",
+   "spec": "240g(60g*4개)*18팩/box",
+   "portion_spec": "원포장 판매 / 오프라인",
+   "pack_qty": 1,
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P023",
+   "active": true,
+   "images_before": [
+    "P023_사츠마이모_와산본_몽블랑_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "211MO547",
+   "erp_name": "세토우치레몬 몽블랑",
+   "sb_name": "세토우치레몬 몽블랑",
+   "vendor": "MO",
+   "storage": "냉동",
+   "product_size": "60*55",
+   "spec": "240g(60g*4개)*18팩/box",
+   "portion_spec": "원포장 판매 / 오프라인",
+   "pack_qty": 1,
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P024",
+   "active": true,
+   "images_before": [
+    "P024_세토우치레몬_몽블랑_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "11MO548",
+   "erp_name": "야메맛차 몽블랑",
+   "sb_name": "야메맛차 몽블랑",
+   "vendor": "MO",
+   "storage": "냉동",
+   "product_size": "60*50",
+   "spec": "260g(65g*4개)*18팩/box",
+   "portion_spec": "원포장 판매 / 오프라인",
+   "pack_qty": 1,
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P025",
+   "active": true,
+   "images_before": [
+    "P025_야메맛차_몽블랑_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "211MO549",
+   "erp_name": "밤몽블랑",
+   "sb_name": "밤몽블랑",
+   "vendor": "MO",
+   "storage": "냉동",
+   "product_size": "60*50",
+   "spec": "240g(60g*4ea)*18팩/box",
+   "portion_spec": "원포장 판매 / 오프라인",
+   "pack_qty": 1,
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P026",
+   "active": true,
+   "images_before": [
+    "P026_밤몽블랑_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "211MO557",
+   "erp_name": "바스크 타르트 (갈렛)",
+   "sb_code": "192SB025",
+   "sb_name": "케익바스크어",
+   "vendor": "본코락",
+   "storage": "냉동",
+   "product_size": "ø90 H30",
+   "spec": "95g*18개/box",
+   "portion_spec": "95g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "A 120*150",
+   "extra_work": "열전사",
+   "id": "P027",
+   "active": true,
+   "images_before": [
+    "P027_바스크_타르트_(갈렛)_before1.png"
+   ],
+   "images_after": [
+    "P027_바스크_타르트_(갈렛)_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221BC006",
+   "erp_name": "초콜릿 타르트",
+   "sb_code": "192SB026",
+   "sb_name": "초콜릿타르트",
+   "vendor": "본코락",
+   "storage": "냉동",
+   "product_size": "L130 w70 H20)",
+   "spec": "0.9kg(90g*10ea)/box",
+   "portion_spec": "90g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "전용케이스",
+   "tray": "사각투명창박스",
+   "label": "B 85*85",
+   "extra_work": "바닥에 라벨 부착",
+   "id": "P028",
+   "active": true,
+   "images_before": [
+    "P028_초콜릿_타르트_before1.png"
+   ],
+   "images_after": [
+    "P028_초콜릿_타르트_after1.png",
+    "P028_초콜릿_타르트_after2.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "192DP149",
+   "erp_name": "브라우니",
+   "sb_code": "192SB027",
+   "sb_name": "브라우니",
+   "vendor": "본코락",
+   "storage": "냉동",
+   "product_size": "W65 D60 H20",
+   "spec": "2.5kg(83g*30ea)*4pack/box",
+   "portion_spec": "83g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "A 120*150",
+   "tray": "트레이 A 72*72*20",
+   "extra_work": "열전사",
+   "id": "P029",
+   "active": true,
+   "images_before": [
+    "P029_브라우니_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "192DP148",
+   "erp_name": "코코넛 타르트",
+   "sb_code": "192SB028",
+   "sb_name": "코코넛타르트",
+   "vendor": "본코락",
+   "storage": "냉동",
+   "product_size": "L125 W90 H30",
+   "spec": "1kg(125g*8ea)/box",
+   "portion_spec": "125g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "전용케이스",
+   "tray": "사각투명창박스",
+   "label": "B 85*85",
+   "id": "P030",
+   "active": true,
+   "images_before": [
+    "P030_코코넛_타르트_before1.png"
+   ],
+   "images_after": [
+    "P028_초콜릿_타르트_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "sale_code": "192DP150",
+   "erp_name": "타르트 타틴",
+   "sb_code": "192SB029",
+   "sb_name": "타르트 타틴",
+   "vendor": "본코락",
+   "storage": "냉동",
+   "product_size": "L135 W10 H30",
+   "spec": "1kg(125g*8ea)/box",
+   "portion_spec": "125g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "전용케이스",
+   "tray": "사각투명창박스",
+   "label": "B 85*85",
+   "id": "P031",
+   "active": true,
+   "images_before": [
+    "P031_타르트_타틴_before1.png"
+   ],
+   "images_after": [
+    "P028_초콜릿_타르트_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "192DP155",
+   "erp_name": "까눌레",
+   "sb_code": "192SB030",
+   "sb_name": "카눌레",
+   "vendor": "본코락",
+   "storage": "냉동",
+   "product_size": "ø50 H40",
+   "spec": "3.6kg(60g*60개)/box",
+   "portion_spec": "60g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "전용케이스",
+   "tray": "화과자1구케이스",
+   "label": "C 52*132",
+   "extra_work": "라벨부착",
+   "id": "P032",
+   "active": true,
+   "images_before": [
+    "P032_까눌레_before1.png"
+   ],
+   "images_after": [
+    "P032_까눌레_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221BC008",
+   "erp_name": "플레인 도넛",
+   "sb_code": "192SB031",
+   "sb_name": "플레인 볼 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀92",
+   "spec": "5g*36ea/box",
+   "portion_spec": "55g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "B 150*180",
+   "extra_work": "열전사",
+   "id": "P033",
+   "active": true,
+   "images_before": [
+    "P033_플레인_도넛_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU014",
+   "erp_name": "글레이즈 도넛",
+   "sb_code": "192SB032",
+   "sb_name": "커스터드 & 코코아 볼도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "52g*36ea/box",
+   "portion_spec": "100g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P034",
+   "active": true,
+   "images_before": [
+    "P034_글레이즈_도넛_before1.png"
+   ],
+   "images_after": [
+    "P034_글레이즈_도넛_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU016",
+   "erp_name": "커스터드 필드 도넛",
+   "sb_code": "192SB033",
+   "sb_name": "글레이즈 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "70g*36ea/box",
+   "portion_spec": "52g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P035",
+   "active": true,
+   "images_before": [
+    "P035_커스터드_필드_도넛_before1.png"
+   ],
+   "images_after": [
+    "P035_커스터드_필드_도넛_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU025",
+   "erp_name": "블루베리 도넛",
+   "sb_code": "192SB034",
+   "sb_name": "다크 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "74g*36ea/box",
+   "portion_spec": "60g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P036",
+   "active": true,
+   "images_before": [
+    "P036_블루베리_도넛_before1.png"
+   ],
+   "images_after": [
+    "P036_블루베리_도넛_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU024",
+   "erp_name": "다크 초콜릿 코팅 도넛",
+   "sb_code": "192SB035",
+   "sb_name": "도트 로투스",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "60g*36ea/box",
+   "portion_spec": "76g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P037",
+   "active": true,
+   "images_before": [
+    "P037_다크_초콜릿_코팅_도넛_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU017",
+   "erp_name": "너트 도넛",
+   "sb_code": "192SB036",
+   "sb_name": "너트 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "64g*36ea/box",
+   "portion_spec": "64g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P038",
+   "active": true,
+   "images_before": [
+    "P038_너트_도넛_before1.png"
+   ],
+   "images_after": [
+    "P038_너트_도넛_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU020",
+   "erp_name": "커스터드&코코아도넛",
+   "sb_code": "192SB037",
+   "sb_name": "도트 핑크 & 화이트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀92",
+   "spec": "100g*36ea/box",
+   "portion_spec": "74g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "확인필요",
+   "extra_work": "열전사",
+   "id": "P039",
+   "active": true,
+   "images_before": [
+    "P039_커스터드&코코아도넛_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU015",
+   "erp_name": "로투스 도넛",
+   "sb_code": "192SB038",
+   "sb_name": "카라멜향 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "76g*36ea/box",
+   "portion_spec": "73g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P040",
+   "active": true,
+   "images_before": [
+    "P040_로투스_도넛_before1.png"
+   ],
+   "images_after": [
+    "P040_로투스_도넛_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU018",
+   "erp_name": "핑크초콜릿코팅 도넛",
+   "sb_code": "192SB039",
+   "sb_name": "레몬 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "74g*36ea/box",
+   "portion_spec": "73g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P041",
+   "active": true,
+   "images_before": [
+    "P041_핑크초콜릿코팅_도넛_before1.png"
+   ],
+   "images_after": [
+    "P041_핑크초콜릿코팅_도넛_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU021",
+   "erp_name": "캬라멜향 도넛",
+   "sb_code": "192SB040",
+   "sb_name": "블루베리 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "73g*36ea/box",
+   "portion_spec": "74g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P042",
+   "active": true,
+   "images_before": [
+    "P042_캬라멜향_도넛_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU022",
+   "erp_name": "3색 도넛",
+   "sb_code": "192SB041",
+   "sb_name": "커스타드 슈가 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "72g*36ea/box",
+   "portion_spec": "70g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P043",
+   "active": true,
+   "images_before": [
+    "P043_3색_도넛_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU026",
+   "erp_name": "레몬 도넛",
+   "sb_code": "192SB042",
+   "sb_name": "트리콜로르 도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "73g*36ea/box",
+   "portion_spec": "72g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P044",
+   "active": true,
+   "images_before": [
+    "P044_레몬_도넛_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU023",
+   "erp_name": "크로도트",
+   "sb_code": "192SB043",
+   "sb_name": "다크 크로도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "77g*24ea/box",
+   "portion_spec": "95g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P045",
+   "active": true,
+   "images_before": [
+    "P045_크로도트_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU004",
+   "erp_name": "다크 크로넛",
+   "sb_code": "192SB044",
+   "sb_name": "크로도트",
+   "vendor": "유로",
+   "storage": "냉동",
+   "product_size": "⌀95",
+   "spec": "95g*22ea/box",
+   "portion_spec": "77g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "B 150*180",
+   "tray": "트레이 B 90*90*27",
+   "extra_work": "열전사",
+   "id": "P046",
+   "active": true,
+   "images_before": [
+    "P046_다크_크로넛_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "221EU027",
+   "erp_name": "구운 호두파이",
+   "sb_code": "192SB045",
+   "sb_name": "구운 호두파이",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "⌀83",
+   "spec": "1.539kg(9ea*3tray)",
+   "portion_spec": "57g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "label": "A 75*75",
+   "extra_work": "라벨부착",
+   "id": "P047",
+   "active": true,
+   "images_before": [
+    "P047_구운_호두파이_before1.png"
+   ],
+   "images_after": [
+    "P047_구운_호두파이_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "구운 고구마 와플",
+   "sb_code": "192SB046",
+   "sb_name": "구운 고구마 와플",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "⌀80",
+   "spec": "(40g*19ea)*5pack/box",
+   "portion_spec": "40g",
+   "pack_qty": 1,
+   "work_type": "소분",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "bag": "A 120*150",
+   "extra_work": "뜯어서 재포장\n열전사",
+   "id": "P048",
+   "active": true,
+   "images_before": [
+    "P048_구운_고구마_와플_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "erp_name": "뉴욕치즈케익타르트",
+   "vendor": "선인",
+   "storage": "냉동",
+   "product_size": "⌀83",
+   "spec": "2.23kg(12ea*3pack/box)",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "A 120*150",
+   "tray": "트레이 A 72*72*20",
+   "extra_work": "열전사",
+   "id": "P049",
+   "active": true,
+   "images_before": [
+    "P049_뉴욕치즈케익타르트_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "erp_name": "아몬드파이",
+   "vendor": "선인",
+   "storage": "냉동",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "A 120*150",
+   "tray": "트레이 A 72*72*20",
+   "extra_work": "열전사",
+   "id": "P050",
+   "active": true,
+   "images_before": [
+    "P050_아몬드파이_before1.png"
+   ],
+   "images_after": [
+    "P050_아몬드파이_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "erp_name": "애플플랑",
+   "vendor": "선인",
+   "storage": "냉동",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐+트레이",
+   "bag": "A 120*150",
+   "tray": "트레이 A 72*72*20",
+   "extra_work": "열전사",
+   "id": "P051",
+   "active": true,
+   "images_before": [
+    "P051_애플플랑_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "스몰난",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "35g*240장/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P052",
+   "active": true,
+   "images_before": [
+    "P052_스몰난_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "난",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "80g*96장/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P053",
+   "active": true,
+   "images_before": [
+    "P053_난_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "점보난",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "110g*48장/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P054",
+   "active": true,
+   "images_before": [
+    "P054_점보난_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "피타브레드",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "70g*144장/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P055",
+   "active": true,
+   "images_before": [
+    "P055_피타브레드_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "또르띠아(6인치)",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "30g*288장/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P056",
+   "active": true,
+   "images_before": [
+    "P056_또르띠아(6인치)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "또르띠아(8인치)",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "48g*192장/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P057",
+   "active": true,
+   "images_before": [
+    "P057_또르띠아(8인치)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "또르띠아(10인치)",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "64g*180장/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P058",
+   "active": true,
+   "images_before": [
+    "P058_또르띠아(10인치)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "또르띠아(12인치)",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "97g*144장/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P059",
+   "active": true,
+   "images_before": [
+    "P059_또르띠아(12인치)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "냉동팬케익",
+   "vendor": "시그니쳐 인터내셔날 푸드",
+   "storage": "냉동",
+   "spec": "(50g*6ea)*40pack/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P060",
+   "active": true,
+   "images_before": [
+    "P060_냉동팬케익_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "erp_name": "플레인 크림치즈스프레드",
+   "vendor": "선인",
+   "storage": "냉장",
+   "spec": "box(50g*12ea)",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P061",
+   "active": true,
+   "images_before": [
+    "P061_플레인_크림치즈스프레드_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "erp_name": "차이브 크림치즈스프레드",
+   "vendor": "선인",
+   "storage": "냉장",
+   "spec": "box(50g*12ea)",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P062",
+   "active": true,
+   "images_before": [
+    "P062_차이브_크림치즈스프레드_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "erp_name": "블루베리 크림치즈스프레드",
+   "vendor": "선인",
+   "storage": "냉장",
+   "spec": "box(50g*12ea)",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P063",
+   "active": true,
+   "images_before": [
+    "P063_블루베리_크림치즈스프레드_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "erp_name": "바질 크림치즈스프레드",
+   "vendor": "선인",
+   "storage": "냉장",
+   "spec": "box(50g*12ea)",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "id": "P064",
+   "active": true,
+   "images_before": [
+    "P064_바질_크림치즈스프레드_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "가열 후 간단 조제",
+   "erp_name": "라구파스타(전자레인지용 12개입)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "4.284kg(12ea)/box",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "pack_method": "열전사",
+   "extra_work": "열전사",
+   "id": "P065",
+   "active": true,
+   "images_before": [
+    "P065_라구파스타(전자레인지용_12개입)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "가열 후 간단 조제",
+   "erp_name": "봉골레파스타(전자레인지용 12개입)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "4.454kg(12ea)/box",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "pack_method": "열전사",
+   "extra_work": "열전사",
+   "id": "P066",
+   "active": true,
+   "images_before": [
+    "P066_봉골레파스타(전자레인지용_12개입)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "가열 후 간단 조제",
+   "erp_name": "짬뽕파스타(전자레인지용 12개입)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "3.492kg(12ea)/box",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "pack_method": "열전사",
+   "extra_work": "열전사",
+   "id": "P067",
+   "active": true,
+   "images_before": [
+    "P067_짬뽕파스타(전자레인지용_12개입)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "erp_name": "시금치갈릭크림치즈파이(24개입)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "2.4kg(12개*2pack)",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "A 120*150",
+   "extra_work": "열전사",
+   "id": "P068",
+   "active": true,
+   "images_before": [
+    "P068_시금치갈릭크림치즈파이(24개입)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "erp_name": "어니언체다치즈파이(24개입)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "2.28kg(12개입*2pack)",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "A 120*150",
+   "extra_work": "열전사",
+   "id": "P069",
+   "active": true,
+   "images_before": [
+    "P069_어니언체다치즈파이(24개입)_before1.png"
+   ],
+   "images_after": [
+    "P069_어니언체다치즈파이(24개입)_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "erp_name": "대파불고기파이(24개입)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "2.28kg(1.14kg*2pack)",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "A 120*150",
+   "extra_work": "열전사",
+   "id": "P070",
+   "active": true,
+   "images_before": [
+    "P070_대파불고기파이(24개입)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "erp_name": "트러플머쉬룸파이(24개입)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "2.232kg(12개입*2pack)",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "A 120*150",
+   "extra_work": "열전사",
+   "id": "P071",
+   "active": true,
+   "images_before": [
+    "P071_트러플머쉬룸파이(24개입)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "냉동생지 오븐베이킹 필수",
+   "erp_name": "에멘탈치즈파이(24개입)",
+   "vendor": "선인",
+   "storage": "냉동",
+   "spec": "2.232kg(12개입*2pack)",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "bag": "A 120*150",
+   "extra_work": "열전사",
+   "id": "P072",
+   "active": true,
+   "images_before": [
+    "P072_에멘탈치즈파이(24개입)_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF062349",
+   "erp_name": "푸드레인(아임홈)레몬파운드M_105g*9ea/PK",
+   "vendor": "아임홈팩토리",
+   "storage": "냉동",
+   "product_size": "68*68",
+   "spec": "105g*9ea/BOX",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "한글표시사항\n조리방법",
+   "tasting": "★★",
+   "heating": "해동 후 섭취",
+   "id": "P073",
+   "active": true,
+   "images_before": [
+    "P073_푸드레인(아임홈)레몬파운드M_105g_9ea_PK_before1.png"
+   ],
+   "images_after": [
+    "P073_푸드레인(아임홈)레몬파운드M_105g_9ea_PK_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF062350",
+   "erp_name": "푸드레인(아임홈)얼그레이파운드M_105g*9ea/PK",
+   "vendor": "아임홈팩토리",
+   "storage": "냉동",
+   "product_size": "68*68",
+   "spec": "105g*9ea/PK",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "한글표시사항\n조리방법",
+   "tasting": "★★",
+   "heating": "해동 후 섭취",
+   "id": "P074",
+   "active": true,
+   "images_before": [
+    "P074_푸드레인(아임홈)얼그레이파운드M_105g_9ea_PK_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF090206",
+   "sale_code": "MF090206",
+   "erp_name": "아인츠_크로크무슈",
+   "vendor": "(P)아인츠푸드 곤지암",
+   "storage": "냉동",
+   "product_size": "130*130*35",
+   "spec": "180g*16ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위다름",
+   "tasting": "★★",
+   "id": "P075",
+   "active": true,
+   "images_before": [
+    "P075_아인츠_크로크무슈_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF090232",
+   "sale_code": "MF090232",
+   "erp_name": "스웰리_우유크림카스테라",
+   "vendor": "(P)(주)조이푸드",
+   "storage": "냉동",
+   "product_size": "100*100",
+   "spec": "105g*6ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위다름",
+   "tasting": "★",
+   "id": "P076",
+   "active": true,
+   "images_before": [
+    "P076_스웰리_우유크림카스테라_before1.png"
+   ],
+   "images_after": [
+    "P076_스웰리_우유크림카스테라_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF062212",
+   "sale_code": "MF062212",
+   "erp_name": "허니버터브레드(구스) 190g*18pk/BOX",
+   "vendor": "(P)구스F&B(주)",
+   "storage": "냉동",
+   "product_size": "130*130*40",
+   "spec": "190g*18pk/BOX",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위다름",
+   "tasting": "★★",
+   "id": "P077",
+   "active": true,
+   "images_before": [
+    "P077_허니버터브레드(구스)_190g_18pk_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF063334",
+   "sale_code": "MF063334",
+   "erp_name": "굿투_모카번",
+   "vendor": "(P)(주)굿투베이크",
+   "storage": "냉동",
+   "product_size": "100*100*60",
+   "spec": "80g*10ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위다름",
+   "tasting": "★★★",
+   "heating": "해동",
+   "id": "P078",
+   "active": true,
+   "images_before": [
+    "P078_굿투_모카번_before1.png"
+   ],
+   "images_after": [
+    "P078_굿투_모카번_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF062934",
+   "sale_code": "MF062934",
+   "erp_name": "보노_달콤바삭크룽지(개별, 소)",
+   "vendor": "(P)주식회사 보노에프앤비",
+   "storage": "냉동",
+   "product_size": "75*135",
+   "spec": "20g*30ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위다름",
+   "id": "P079",
+   "active": true,
+   "images_before": [
+    "P079_보노_달콤바삭크룽지(개별,_소)_before1.png"
+   ],
+   "images_after": [
+    "P079_보노_달콤바삭크룽지(개별,_소)_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "foodrain_code": "MH091014",
+   "sale_code": "MH091537",
+   "erp_name": "2.비에스홀딩스_하트파이_60g*6ea*6pk/BOX",
+   "vendor": "(P)비에스홀딩스",
+   "storage": "상온",
+   "product_size": "65*55*7",
+   "spec": "60g*6ea/PK",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위다름",
+   "id": "P080",
+   "active": true,
+   "images_before": [
+    "P080_2.비에스홀딩스_하트파이_60g_6ea_6pk_BOX_before1.png"
+   ],
+   "images_after": [
+    "P080_2.비에스홀딩스_하트파이_60g_6ea_6pk_BOX_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063539",
+   "erp_name": "2.(굿투)_감자빵 95g*15ea/BOX",
+   "vendor": "(P)(주)굿투베이크",
+   "storage": "냉동",
+   "spec": "95g*15ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "판매단위다름",
+   "tasting": "진행",
+   "heating": "해동",
+   "id": "P081",
+   "active": true,
+   "images_before": [
+    "P081_2.(굿투)_감자빵_95g_15ea_BOX_before1.png"
+   ],
+   "images_after": [
+    "P081_2.(굿투)_감자빵_95g_15ea_BOX_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063540",
+   "erp_name": "2.(굿투)_고구마빵 95g*15ea/BOX",
+   "vendor": "(P)(주)굿투베이크",
+   "storage": "냉동",
+   "spec": "95g*15ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "판매단위다름",
+   "tasting": "진행",
+   "heating": "해동",
+   "id": "P082",
+   "active": true,
+   "images_before": [
+    "P082_2.(굿투)_고구마빵_95g_15ea_BOX_before1.png"
+   ],
+   "images_after": [
+    "P082_2.(굿투)_고구마빵_95g_15ea_BOX_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF063043",
+   "sale_code": "MF063043",
+   "erp_name": "테이트_생모짜렐라 베이컨 포테이토 치아바타",
+   "vendor": "(P)(주)테이트",
+   "storage": "냉동",
+   "product_size": "180*75",
+   "spec": "217g*3ea/PK",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위 다름",
+   "tasting": "★★★",
+   "heating": "해동 후 전자레인지 1분 30초",
+   "id": "P083",
+   "active": true,
+   "images_before": [
+    "P083_테이트_생모짜렐라_베이컨_포테이토_치아바타_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF063247",
+   "sale_code": "MF063247",
+   "erp_name": "테이트_더블치즈햄치아바타",
+   "vendor": "(P)(주)테이트",
+   "storage": "냉동",
+   "product_size": "140*60",
+   "spec": "165g*3ea/PK",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위 다름",
+   "tasting": "★★",
+   "id": "P084",
+   "active": true,
+   "images_before": [
+    "P084_테이트_더블치즈햄치아바타_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF063041",
+   "sale_code": "MF063041",
+   "erp_name": "테이트_매콤치즈 불고기 치아바타",
+   "vendor": "(P)(주)테이트",
+   "storage": "냉동",
+   "product_size": "180*75",
+   "spec": "190g*3ea/PK",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위 다름",
+   "tasting": "★★★",
+   "heating": "해동 후 전자레인지 1분 30초",
+   "id": "P085",
+   "active": true,
+   "images_before": [
+    "P085_테이트_매콤치즈_불고기_치아바타_before1.png"
+   ],
+   "images_after": [
+    "P085_테이트_매콤치즈_불고기_치아바타_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF063267",
+   "sale_code": "MF063267",
+   "erp_name": "테이트_치킨브레스트 샌드위치",
+   "vendor": "(P)(주)테이트",
+   "storage": "냉동",
+   "product_size": "160*75",
+   "spec": "155g*3ea/PK",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위 다름",
+   "tasting": "★★",
+   "id": "P086",
+   "active": true,
+   "images_before": [
+    "P086_테이트_치킨브레스트_샌드위치_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF090228",
+   "sale_code": "MF090228",
+   "erp_name": "스웰리_에그햄치즈샌드위치",
+   "vendor": "(P)푸드코아",
+   "storage": "냉동",
+   "product_size": "100*110*70",
+   "spec": "153g*12ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위 다름",
+   "tasting": "★★",
+   "heating": "오븐 6분으로 변경\n4분은 안에 차가움",
+   "id": "P087",
+   "active": true,
+   "images_before": [
+    "P087_스웰리_에그햄치즈샌드위치_before1.png"
+   ],
+   "images_after": [
+    "P087_스웰리_에그햄치즈샌드위치_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF062691",
+   "sale_code": "MF062691",
+   "erp_name": "잉글리쉬머핀샌드(구스) 120g*10ea/BOX",
+   "vendor": "(P)구스F&B(주)",
+   "storage": "냉동",
+   "product_size": "105*35",
+   "spec": "120g*10ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위 다름",
+   "tasting": "★★★",
+   "heating": "전자레인지90초\n60초는 차가움",
+   "id": "P088",
+   "active": true,
+   "images_before": [
+    "P088_잉글리쉬머핀샌드(구스)_120g_10ea_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF090230",
+   "sale_code": "MF090230",
+   "erp_name": "스웰리_핫도그오리지날",
+   "vendor": "(P)푸드코아",
+   "storage": "냉동",
+   "product_size": "175*70*60",
+   "spec": "120g*24ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "판매단위 다름",
+   "tasting": "★★",
+   "heating": "전자레인지 40초",
+   "id": "P089",
+   "active": true,
+   "images_before": [
+    "P089_스웰리_핫도그오리지날_before1.png"
+   ],
+   "images_after": [
+    "P089_스웰리_핫도그오리지날_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF062280",
+   "sale_code": "MF063576",
+   "erp_name": "사과 맘모스(디보트) 140g*8ea/BOX",
+   "vendor": "(P)디보트코리아",
+   "storage": "냉동",
+   "product_size": "100*100*25",
+   "spec": "140g*8ea/BOX",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "조리방법스티커",
+   "tasting": "★\n진행",
+   "id": "P090",
+   "active": true,
+   "images_before": [
+    "P090_사과_맘모스(디보트)_140g_8ea_BOX_before1.png"
+   ],
+   "images_after": [
+    "P090_사과_맘모스(디보트)_140g_8ea_BOX_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF062242",
+   "sale_code": "MF063589",
+   "erp_name": "인절미토스트(디보트) 170g*16ea/BOX",
+   "vendor": "(P)디보트코리아",
+   "storage": "냉동",
+   "product_size": "115*115*30",
+   "spec": "170g*16ea/BOX",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "조리방법스티커",
+   "tasting": "★\n진행",
+   "id": "P091",
+   "active": true,
+   "images_before": [
+    "P091_인절미토스트(디보트)_170g_16ea_BOX_before1.png"
+   ],
+   "images_after": [
+    "P091_인절미토스트(디보트)_170g_16ea_BOX_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF090266",
+   "sale_code": "MF090266",
+   "erp_name": "팡프레시_X2딸기크림샌드",
+   "vendor": "(P)주식회사 팡프레시",
+   "storage": "냉동",
+   "product_size": "90~95*90*95*50~55",
+   "spec": "57g*12ea/PK",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "조리방법스티커",
+   "tasting": "★★",
+   "id": "P092",
+   "active": true,
+   "images_before": [
+    "P092_팡프레시_X2딸기크림샌드_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF090263",
+   "sale_code": "MF090263",
+   "erp_name": "팡프레시_카야샌드",
+   "vendor": "(P)주식회사 팡프레시",
+   "storage": "냉동",
+   "product_size": "90~95*90*95*50~55",
+   "spec": "57g*12ea/PK",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "조리방법스티커",
+   "tasting": "★★",
+   "id": "P093",
+   "active": true,
+   "images_before": [
+    "P093_팡프레시_카야샌드_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF090262",
+   "sale_code": "MF090262",
+   "erp_name": "팡프레시_햄치즈샌드",
+   "vendor": "(P)주식회사 팡프레시",
+   "storage": "냉동",
+   "product_size": "90~95*90*95*50~55",
+   "spec": "78g*12ea/PK",
+   "work_type": "보수작업",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "조리방법스티커",
+   "tasting": "★★★",
+   "id": "P094",
+   "active": true,
+   "images_before": [
+    "P094_팡프레시_햄치즈샌드_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063797",
+   "erp_name": "M효림푸드_몽블랑_145g*2ea*6pk/BOX",
+   "vendor": "효림푸드",
+   "storage": "냉동",
+   "product_size": "120*120*120",
+   "spec": "145G*12EA/bOX",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "전용케이스",
+   "extra_work": "선인재포장\n트레이",
+   "tasting": "★★",
+   "id": "P095",
+   "active": true,
+   "images_before": [
+    "P095_M효림푸드_몽블랑_145g_2ea_6pk_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063495",
+   "erp_name": "M효림푸드_밤식빵_100g*8ea*4pk/BOX",
+   "vendor": "효림푸드",
+   "storage": "냉동",
+   "product_size": "120*45*65",
+   "spec": "100g*8ea/Box",
+   "work_type": "소분",
+   "individual_pack": "N",
+   "label_attach": "N",
+   "pack_method": "비닐",
+   "extra_work": "선인재포장\n클립 포장",
+   "tasting": "★★",
+   "id": "P096",
+   "active": true,
+   "images_before": [
+    "P096_M효림푸드_밤식빵_100g_8ea_4pk_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF062897",
+   "erp_name": "푸드레인(아임홈)바스크치즈케이크_180g*5ea*12pk/BOX",
+   "vendor": "(P)디보트코리아",
+   "storage": "냉동",
+   "product_size": "90*90",
+   "spec": "180g*5ea/PK",
+   "work_type": "소분",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "선인재포장\n\n조리방법",
+   "tasting": "★★★",
+   "heating": "해동 후 섭취",
+   "id": "P097",
+   "active": true,
+   "images_before": [
+    "P097_푸드레인(아임홈)바스크치즈케이크_180g_5ea_12pk_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF090790",
+   "erp_name": "2.(큐앤비)레몬바닐라빈 마들렌 27g*10ea*10pk/BOX",
+   "vendor": "큐앤비푸드",
+   "storage": "냉동",
+   "product_size": "40*70*25~40",
+   "spec": "27g*10ea/PK",
+   "work_type": "소분",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "선인재포장\n\n2종 1트레이",
+   "tasting": "★★",
+   "id": "P098",
+   "active": true,
+   "images_before": [
+    "P098_2.(큐앤비)레몬바닐라빈_마들렌_27g_10ea_10pk_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF090789",
+   "erp_name": "2.(큐앤비)바닐라빈 마들렌 27g*10ea*10pk/BOX",
+   "vendor": "큐앤비푸드",
+   "storage": "냉동",
+   "product_size": "40*70*25~40",
+   "spec": "27g*10ea/PK",
+   "work_type": "소분",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "선인재포장\n\n2종 1트레이",
+   "tasting": "★★",
+   "id": "P099",
+   "active": true,
+   "images_before": [
+    "P099_2.(큐앤비)바닐라빈_마들렌_27g_10ea_10pk_BOX_before1.png"
+   ],
+   "images_after": [
+    "P099_2.(큐앤비)바닐라빈_마들렌_27g_10ea_10pk_BOX_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MH060104",
+   "sale_code": "MH060104",
+   "erp_name": "벨지움와플(케익드라마) 80g*20ea/BOX",
+   "vendor": "(P)주식회사 케익드라마",
+   "storage": "냉동",
+   "product_size": "110*110*25",
+   "spec": "80g*20ea/BOX",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "extra_work": "선인재포장",
+   "tasting": "★★★",
+   "id": "P100",
+   "active": true,
+   "images_before": [
+    "P100_벨지움와플(케익드라마)_80g_20ea_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF090907",
+   "erp_name": "M아우어_초코티그레_53g*24ea/BOX",
+   "vendor": "아우어푸드",
+   "storage": "냉동",
+   "product_size": 70,
+   "spec": "53g*24ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "별도코드\n\n업체에서 라벨부착\n조리방법 확인",
+   "tasting": "★★",
+   "id": "P101",
+   "active": true,
+   "images_before": [
+    "P101_M아우어_초코티그레_53g_24ea_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF090908",
+   "erp_name": "M아우어_얼그레이초코티그레_53g*24ea/BOX",
+   "vendor": "아우어푸드",
+   "storage": "냉동",
+   "product_size": 70,
+   "spec": "53g*24ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "별도코드\n\n업체에서 라벨부착\n조리방법 확인",
+   "tasting": "★★",
+   "id": "P102",
+   "active": true,
+   "images_before": [
+    "P102_M아우어_얼그레이초코티그레_53g_24ea_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF090909",
+   "erp_name": "M아우어_말차초코티그레_53g*24ea/BOX",
+   "vendor": "아우어푸드",
+   "storage": "냉동",
+   "product_size": 70,
+   "spec": "53g*24ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "별도코드\n\n업체에서 라벨부착\n조리방법 확인",
+   "tasting": "★★",
+   "id": "P103",
+   "active": true,
+   "images_before": [
+    "P103_M아우어_말차초코티그레_53g_24ea_BOX_before1.png"
+   ],
+   "images_after": [
+    "P103_M아우어_말차초코티그레_53g_24ea_BOX_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063542",
+   "erp_name": "2.(굿투)_달콤레몬머핀 95g*12ea/BOX",
+   "vendor": "굿투베이크",
+   "storage": "냉동",
+   "product_size": "90*90*80",
+   "spec": "95g*12ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "별도코드\n\n업체 필름 인쇄\n조리방법 확인",
+   "tasting": "★★",
+   "id": "P104",
+   "active": true,
+   "images_before": [
+    "P104_2.(굿투)_달콤레몬머핀_95g_12ea_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063543",
+   "erp_name": "2.(굿투)_달콤블루베리머핀 95g*12ea/BOX",
+   "vendor": "굿투베이크",
+   "storage": "냉동",
+   "product_size": "90*90*80",
+   "spec": "95g*12ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "별도코드\n\n업체 필름 인쇄\n조리방법 확인",
+   "tasting": "★★",
+   "id": "P105",
+   "active": true,
+   "images_before": [
+    "P105_2.(굿투)_달콤블루베리머핀_95g_12ea_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063544",
+   "erp_name": "2.(굿투)_달콤초코머핀 95g*12ea/BOX",
+   "vendor": "굿투베이크",
+   "storage": "냉동",
+   "product_size": "90*90*80",
+   "spec": "95g*12ea/BOX",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "별도코드\n\n업체 필름 인쇄\n조리방법 확인",
+   "tasting": "★★",
+   "id": "P106",
+   "active": true,
+   "images_before": [
+    "P106_2.(굿투)_달콤초코머핀_95g_12ea_BOX_before1.png"
+   ],
+   "images_after": [
+    "P106_2.(굿투)_달콤초코머핀_95g_12ea_BOX_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063522",
+   "erp_name": "아임홈_레몬아이싱파운드_70g*12ea*12pk/BOX",
+   "vendor": "아임홈팩토리",
+   "storage": "냉동",
+   "product_size": "78~83*58~72*26~35",
+   "spec": "70g*12ea/PK",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "별도코드\n\n\n\n한글표시사항\n조리방법",
+   "tasting": "★★",
+   "heating": "상온해동",
+   "id": "P107",
+   "active": true,
+   "images_before": [
+    "P107_아임홈_레몬아이싱파운드_70g_12ea_12pk_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "피자코리아 비프 불고기",
+   "vendor": "피자코리아",
+   "storage": "냉동",
+   "spec": "75g*40ea/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "tasting": "★★★",
+   "heating": "에어프라이 2분 예열후 5분가열",
+   "id": "P108",
+   "active": true,
+   "images_before": [
+    "P108_피자코리아_비프_불고기_before1.png"
+   ],
+   "images_after": [
+    "P108_피자코리아_비프_불고기_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "피자코리아 애플 고르곤졸라",
+   "vendor": "피자코리아",
+   "storage": "냉동",
+   "spec": "65g*40ea/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "tasting": "★★★",
+   "heating": "에어프라이 2분 예열후 5분가열",
+   "id": "P109",
+   "active": true,
+   "images_before": [
+    "P109_피자코리아_애플_고르곤졸라_before1.png"
+   ],
+   "images_after": [
+    "P109_피자코리아_애플_고르곤졸라_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "피자코리아 콰트로 치즈",
+   "vendor": "피자코리아",
+   "storage": "냉동",
+   "spec": "65g*40ea/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "tasting": "★★★",
+   "heating": "에어프라이 2분 예열후 5분가열",
+   "id": "P110",
+   "active": true,
+   "images_before": [
+    "P110_피자코리아_콰트로_치즈_before1.png"
+   ],
+   "images_after": [
+    "P110_피자코리아_콰트로_치즈_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "피자코리아 김치 불고기",
+   "vendor": "피자코리아",
+   "storage": "냉동",
+   "spec": "85g*40ea/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "tasting": "★★★",
+   "heating": "에어프라이 2분 예열후 5분가열",
+   "id": "P111",
+   "active": true,
+   "images_before": [
+    "P111_피자코리아_김치_불고기_before1.png"
+   ],
+   "images_after": [
+    "P111_피자코리아_김치_불고기_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "스위트몬스터마르게리타포카치아 피자",
+   "vendor": "피자코리아",
+   "storage": "냉동",
+   "spec": "85g*40ea/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "tasting": "★★★",
+   "heating": "에어프라이 2분 예열후 5분가열",
+   "id": "P112",
+   "active": true,
+   "images_before": [
+    "P112_스위트몬스터마르게리타포카치아_피자_before1.png"
+   ],
+   "images_after": [
+    "P112_스위트몬스터마르게리타포카치아_피자_after1.png"
+   ],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "선인",
+   "main_category": "해동 또는 간단 가열",
+   "erp_name": "스위트몬스터베이컨포테이토포카치아 피자",
+   "vendor": "피자코리아",
+   "storage": "냉동",
+   "spec": "80g*40ea/box",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "tasting": "★★★",
+   "heating": "에어프라이 2분 예열후 5분가열",
+   "id": "P113",
+   "active": true,
+   "images_after": [
+    "P113_스위트몬스터베이컨포테이토포카치아_피자_after1.png"
+   ],
+   "images_before": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "sale_code": "MF063792",
+   "erp_name": "아임홈_스트로베리파운드_60g*12ea*12pk/BOX",
+   "vendor": "아임홈팩토리",
+   "storage": "냉동",
+   "product_size": "78~83*58~72*26~35",
+   "spec": "60g*12ea/PK",
+   "individual_pack": "Y",
+   "label_attach": "N",
+   "extra_work": "별도코드\n\n\n\n한글표시사항\n조리방법",
+   "tasting": "★★",
+   "heating": "상온해동",
+   "id": "P114",
+   "active": true,
+   "images_before": [
+    "P114_아임홈_스트로베리파운드_60g_12ea_12pk_BOX_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "prep_owner": "코업",
+   "main_category": "해동 또는 간단 가열",
+   "foodrain_code": "MF063253",
+   "sale_code": "MF063253",
+   "erp_name": "화이트롤케익",
+   "vendor": "(P)비에스홀딩스",
+   "storage": "냉동",
+   "product_size": "160*80*60",
+   "spec": "240g*6ea/BOX",
+   "work_type": "완제",
+   "individual_pack": "Y",
+   "label_attach": "Y",
+   "tasting": "★★★",
+   "heating": "해동 후 섭취",
+   "id": "P115",
+   "active": true,
+   "images_before": [
+    "P115_화이트롤케익_before1.png"
+   ],
+   "images_after": [],
+   "updated_at": "2026-09-02T15:35:48+09:00"
+  }
+ ]
+}

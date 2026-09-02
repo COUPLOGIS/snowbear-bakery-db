@@ -1,0 +1,59 @@
+{
+ "groups": [
+  {
+   "key": "class",
+   "label": "구분",
+   "fields": ["prep_owner", "main_category"]
+  },
+  {
+   "key": "code",
+   "label": "코드",
+   "fields": ["erp_name", "sale_code", "foodrain_code", "sb_code", "sb_name"]
+  },
+  {
+   "key": "basic",
+   "label": "기본정보",
+   "fields": ["vendor", "storage", "shelf_life", "product_size", "spec", "portion_spec", "pack_qty"]
+  },
+  {
+   "key": "work",
+   "label": "소분작업",
+   "fields": ["work_type", "individual_pack", "label_attach", "pack_method", "bag", "tray", "label", "extra_work"]
+  },
+  {
+   "key": "serve",
+   "label": "취식 · 시식",
+   "fields": ["heating", "tasting"]
+  }
+ ],
+ "fields": {
+  "prep_owner":      { "label": "준비주체",        "excel": "준비주체2",              "type": "select",   "filter": true,  "width": 80 },
+  "main_category":   { "label": "대분류",          "excel": "대분류5",                "type": "select",   "filter": true,  "width": 170 },
+  "erp_name":        { "label": "ERP상품명",       "excel": "ERP상품명",              "type": "text",     "required": true, "width": 190, "primary": true },
+  "sale_code":       { "label": "실제판매코드",     "excel": "실제판매코드",            "type": "text",     "width": 105 },
+  "foodrain_code":   { "label": "푸드레인 판매코드", "excel": "푸드레인 판매코드",       "type": "text",     "width": 120 },
+  "sb_code":         { "label": "스노우베이커리 코드","excel": "스노우베이커리 상품코드2","type": "text",     "width": 130 },
+  "sb_name":         { "label": "스노우베이커리 명칭","excel": "스노우베이커리 명칭",    "type": "text",     "width": 190 },
+  "vendor":          { "label": "매입사명",        "excel": "매입사명",               "type": "select",   "filter": true,  "width": 130 },
+  "storage":         { "label": "보관방법",        "excel": "보관방법",               "type": "select",   "filter": true,  "width": 80 },
+  "shelf_life":      { "label": "유통기한",        "excel": "유통기한",               "type": "text",     "width": 90 },
+  "product_size":    { "label": "제품사이즈",      "excel": "제품사이즈",             "type": "text",     "width": 130 },
+  "spec":            { "label": "규격",            "excel": "규격",                   "type": "text",     "width": 175 },
+  "portion_spec":    { "label": "소분규격",        "excel": "소분규격",               "type": "text",     "width": 110 },
+  "pack_qty":        { "label": "입수",            "excel": "입수",                   "type": "text",     "width": 60 },
+  "work_type":       { "label": "분류",            "excel": "분류",                   "type": "select",   "filter": true,  "width": 80 },
+  "individual_pack": { "label": "개별 포장여부",    "excel": "개별 포장여부",           "type": "select",   "width": 95 },
+  "label_attach":    { "label": "표시사항 부착",    "excel": "표시사항 부착여부",       "type": "select",   "width": 95 },
+  "pack_method":     { "label": "소분포장방식",     "excel": "소분포장방식",            "type": "select",   "filter": true,  "width": 110 },
+  "bag":             { "label": "포장지",          "excel": "포장지",                 "type": "select",   "width": 100 },
+  "tray":            { "label": "트레이",          "excel": "트레이",                 "type": "select",   "width": 140 },
+  "label":           { "label": "라벨 (투명)",      "excel": "라벨 (투명)",            "type": "select",   "width": 100 },
+  "extra_work":      { "label": "추가작업",        "excel": "추가작업",               "type": "textarea", "width": 120 },
+  "heating":         { "label": "가열방법",        "excel": "가열방법",               "type": "textarea", "width": 200 },
+  "tasting":         { "label": "시식",            "excel": "시식",                   "type": "text",     "width": 70 }
+ },
+ "images": {
+  "images_before": { "label": "소분 전" },
+  "images_after":  { "label": "소분 후" }
+ }
+}

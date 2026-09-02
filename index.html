@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스노우베어베이커리 상품 DB</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>스노우베어베이커리 <span>상품 DB</span></h1>
+  <div class="topbar-meta">
+    <span id="dataStamp" class="stamp"></span>
+    <button type="button" id="btnAdd" class="btn btn-primary">추가하기</button>
+    <button type="button" id="btnUpload" class="btn">엑셀 업로드</button>
+    <button type="button" id="btnToken" class="btn btn-ghost" aria-label="GitHub 저장 설정">
+      <span id="tokenDot" class="dot" aria-hidden="true"></span>저장설정
+    </button>
+  </div>
+</header>
+
+<main id="layout" class="layout">
+
+  <!-- 조건필터 -->
+  <section class="filters" aria-label="조건필터">
+    <div class="filter-row">
+      <label class="f-search">
+        <span class="sr-only">검색</span>
+        <input type="search" id="q" placeholder="상품명 · 코드 · 규격 검색" autocomplete="off">
+      </label>
+      <div id="selects" class="f-selects"></div>
+      <label class="f-check">
+        <input type="checkbox" id="showHidden"> 숨김 포함
+      </label>
+      <button type="button" id="btnReset" class="btn btn-ghost">초기화</button>
+      <span id="countLabel" class="count" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="pane-list" aria-label="상품 리스트">
+    <div class="table-scroll">
+      <table id="grid">
+        <thead id="gridHead"></thead>
+        <tbody id="gridBody"></tbody>
+      </table>
+    </div>
+    <p id="emptyMsg" class="empty" hidden>조건에 맞는 상품이 없습니다.</p>
+  </section>
+
+  <section id="detail" class="pane-detail" aria-label="제품 상세정보" hidden>
+    <div class="detail-head">
+      <div>
+        <h2 id="dTitle">제품 상세정보</h2>
+        <p id="dSub" class="detail-sub"></p>
+      </div>
+      <div class="detail-actions">
+        <button type="button" id="btnEdit" class="btn btn-primary">수정하기</button>
+        <button type="button" id="btnHide" class="btn">숨김</button>
+        <button type="button" id="btnClose" class="btn btn-ghost" aria-label="상세 닫기">닫기</button>
+      </div>
+    </div>
+    <div id="detailBody" class="detail-body"></div>
+  </section>
+
+</main>
+
+<!-- 이미지 확대 -->
+<div id="lightbox" class="lightbox" hidden>
+  <button type="button" class="lb-close" aria-label="닫기">&times;</button>
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</div>
+
+<!-- 수정/추가 폼 -->
+<dialog id="editDlg" class="dlg">
+  <form method="dialog" id="editForm">
+    <header class="dlg-head">
+      <h2 id="editTitle">상품 수정</h2>
+      <button type="button" class="btn btn-ghost dlg-x" data-close aria-label="닫기">&times;</button>
+    </header>
+    <div id="editBody" class="dlg-body"></div>
+    <footer class="dlg-foot">
+      <span id="editMsg" class="dlg-msg" aria-live="polite"></span>
+      <button type="button" class="btn" data-close>취소</button>
+      <button type="submit" class="btn btn-primary" id="btnSave">저장 (커밋)</button>
+    </footer>
+  </form>
+</dialog>
+
+<!-- 엑셀 업로드 -->
+<dialog id="upDlg" class="dlg">
+  <header class="dlg-head">
+    <h2>엑셀 일괄 업로드</h2>
+    <button type="button" class="btn btn-ghost dlg-x" data-close aria-label="닫기">&times;</button>
+  </header>
+  <div class="dlg-body">
+    <p class="hint">
+      원본과 같은 형식의 <b>스노우베어베이커리 상품정보.xlsx</b> 를 올리면
+      시트 <code>상품리스트(이미지)</code> 를 읽어 기존 데이터와 병합합니다.
+      판매코드 또는 ERP상품명이 같으면 <b>갱신</b>, 없으면 <b>추가</b>하며
+      엑셀에 없는 기존 상품은 지우지 않습니다.
+    </p>
+    <input type="file" id="xlsxFile" accept=".xlsx">
+    <div id="upPreview" class="up-preview" hidden></div>
+  </div>
+  <footer class="dlg-foot">
+    <span id="upMsg" class="dlg-msg" aria-live="polite"></span>
+    <button type="button" class="btn" data-close>취소</button>
+    <button type="button" class="btn btn-primary" id="btnUpCommit" disabled>병합 후 커밋</button>
+  </footer>
+</dialog>
+
+<!-- 저장 설정 (GitHub 토큰) -->
+<dialog id="tokenDlg" class="dlg dlg-sm">
+  <header class="dlg-head">
+    <h2>저장 설정</h2>
+    <button type="button" class="btn btn-ghost dlg-x" data-close aria-label="닫기">&times;</button>
+  </header>
+  <div class="dlg-body">
+    <p class="hint">
+      수정 · 추가 · 업로드는 GitHub 저장소에 직접 커밋됩니다.
+      <b>repo</b> 권한이 있는 개인 액세스 토큰(PAT)이 필요하며,
+      토큰은 이 브라우저에만 저장되고 어디에도 전송되지 않습니다
+      (github.com API 제외).
+    </p>
+    <label class="fld">
+      <span>GitHub 토큰</span>
+      <input type="password" id="tokenInput" placeholder="github_pat_... 또는 ghp_..." autocomplete="off">
+    </label>
+    <p class="hint">
+      발급: GitHub → Settings → Developer settings → Personal access tokens →
+      Fine-grained token → 이 저장소에 <code>Contents: Read and write</code> 권한.
+    </p>
+  </div>
+  <footer class="dlg-foot">
+    <span id="tokenMsg" class="dlg-msg" aria-live="polite"></span>
+    <button type="button" class="btn" id="btnTokenClear">토큰 삭제</button>
+    <button type="button" class="btn btn-primary" id="btnTokenSave">저장</button>
+  </footer>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
