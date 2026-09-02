@@ -1,7 +1,7 @@
 {
- "updated_at": "2026-09-02T15:59:03+09:00",
+ "updated_at": "2026-09-02T16:21:30+09:00",
  "source": "스노우베어베이커리 상품정보.xlsx",
- "count": 115,
+ "count": 116,
  "products": [
   {
    "prep_owner": "선인",
@@ -1960,7 +1960,7 @@
    "erp_name": "2.(굿투)_감자빵 95g*15ea/BOX",
    "vendor": "(P)(주)굿투베이크",
    "storage": "냉동",
-   "spec": "95g*15ea/BOX",
+   "spec": "검사용-변경값-001",
    "individual_pack": "Y",
    "label_attach": "N",
    "extra_work": "판매단위다름",
@@ -1974,7 +1974,7 @@
    "images_after": [
     "P081_2.(굿투)_감자빵_95g_15ea_BOX_after1.png"
    ],
-   "updated_at": "2026-09-02T15:59:03+09:00"
+   "updated_at": "2026-09-02T16:21:30+09:00"
   },
   {
    "prep_owner": "코업",
@@ -1990,14 +1990,14 @@
    "tasting": "진행",
    "heating": "해동",
    "id": "P082",
-   "active": true,
+   "active": false,
    "images_before": [
     "P082_2.(굿투)_고구마빵_95g_15ea_BOX_before1.png"
    ],
    "images_after": [
     "P082_2.(굿투)_고구마빵_95g_15ea_BOX_after1.png"
    ],
-   "updated_at": "2026-09-02T15:35:48+09:00"
+   "updated_at": "2026-09-02T16:21:30+09:00"
   },
   {
    "prep_owner": "코업",
@@ -2747,6 +2747,15 @@
    ],
    "images_after": [],
    "updated_at": "2026-09-02T15:35:48+09:00"
+  },
+  {
+   "id": "P116",
+   "active": true,
+   "erp_name": "검사용 신규상품",
+   "spec": "100g*10ea/BOX",
+   "images_before": [],
+   "images_after": [],
+   "updated_at": "2026-09-02T16:21:30+09:00"
   }
  ]
 }
